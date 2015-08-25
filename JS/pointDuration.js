@@ -54,14 +54,20 @@ function updatePointDuration() {
 	var day = now.getDate();
 	var year = now.getFullYear();
 
-	blinkYear = !Boolean(blinkYear);
-
-
 	month = checkDigit(month);
 	day = checkDigit(day);
 	hour = checkDigit(hour);
 	minute = checkDigit(minute);
 	second = checkDigit(second);
+
+	blinkYear = !Boolean(blinkYear);
+
+	if (!Boolean(blinkYear)) {
+		// year = ". . . . ";
+		year = year - 1;
+		// context.clearRect(0, 0, canvas.width-360, canvas.height/2);
+		// context.clearRect(0, 0, canvas.width/1.42, canvas.height/2);
+	} 
 
 	datestring = year + "." + month + "." + day;
 	timestring = hour + "." + minute + "." + second;
@@ -70,12 +76,6 @@ function updatePointDuration() {
 	context.fillText(datestring, canvas.width/2, canvas.height/2);
 	context.fillText(timestring, canvas.width/2, canvas.height);
 
-	if (!Boolean(blinkYear)) {
-		// year = ". . . . ";
-		// year = year - 1;
-		// context.clearRect(0, 0, canvas.width-360, canvas.height/2);
-		context.clearRect(0, 0, canvas.width/1.42, canvas.height/2);
-	} 
 
 	timeout = setTimeout(function(){updatePointDuration();}, delay);
 }
