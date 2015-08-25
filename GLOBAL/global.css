@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'futura-book';
+    src: url('fonts/futura-book-webfont.eot');
+    src: url('fonts/futura-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futura-book-webfont.woff2') format('woff2'),
+         url('fonts/futura-book-webfont.woff') format('woff'),
+         url('fonts/futura-book-webfont.ttf') format('truetype'),
+         url('fonts/futura-book-webfont.svg#cosmosmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+}
+
+body {
+	font-family: futura-book, Helvetica, Arial, sans-serif;
+	background-color: #FFF;
+}
+
+header {
+}
+
+.caption {
+	visibility: hidden; 
+}
+a.img-container:hover + .caption {
+	visibility: visible;
+}
+
+/* link styles */
+a:link,
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+a.r:hover {
+	color: #FB3139;
+}
+a.b:hover {
+	color: #5386F0;
+}
+a.y:hover {
+	color: #FED71B;
+}
+a:active {
+}
+
+/* header */
+
+header {
+	font-size: 48px;
+	letter-spacing: -1.25px;
+	position: fixed;
+	cursor: pointer;
+	line-height: 48px;
+}
+
+#menu-base {
+	position: fixed;
+	visibility: visible;
+}
+
+#menu-hover {
+	position: fixed;
+	visibility: hidden;
+}
+
+.menuItemContainer:nth-of-type(3n+0) > a:hover {
+	color: #ff0000;
+}
+
+.menuItemContainer:nth-of-type(3n+1) > a:hover {
+	color: #0000ff;
+}
+
+.menuItemContainer:nth-of-type(3n+2) > a:hover {
+	color: #FED71B;
+}
+
+/* ids */
+#page {
+	padding: 10px;
+}
+
+
+#clock {
+	position: fixed;
+	top: 20px;	
+	right: 20px;	
+	height: 250px;
+	width: 1200px;
+}
+
+#body {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-device-width: 568px) {
+	#menu {
+		font-size: 40px;
+		letter-spacing: -1.5px;
+		position: static;
+		line-height: 40px;
+	}
+	#menu-base, 
+	#menu-hover {
+		position: static;
+	}
+	
+	#menu-base {
+		visibility: visible;
+		display: block;
+	}
+	
+	#menu-hover {
+		display: none;
+		visibility: visible;
+	}
+}
