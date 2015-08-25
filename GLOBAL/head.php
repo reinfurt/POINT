@@ -25,7 +25,6 @@ $doc_title = 'Point';
 $pageName = basename($_SERVER['PHP_SELF'], ".php");
 
 $u = "http://".$_SERVER['SERVER_NAME'];
-echo $u;
 
 $sql = "SELECT * from objects where id = $id";
 $res = MYSQL_QUERY($sql);
@@ -47,14 +46,6 @@ $name = $obj['name1'] ? $obj['name1'] : "Point";
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="GLOBAL/global.css">
 		<script type="text/javascript" src="JS/pointDuration.js"></script>
-		<?
-		// only load ajax script if on homepage
-		if(!$id) {
-	    	?>
-			<!-- <script type="text/javascript" src="JS/ajax.js"></script> -->
-		<?
-	    	}
-		?>
 	</head>
 	<body>
 		<!--  preload futura-book so that canvas has it immediately when it calls for it -->
@@ -62,14 +53,14 @@ $name = $obj['name1'] ? $obj['name1'] : "Point";
 		<div style="font-family: futura-book;"></div>
 
 		<div id="page">
-			<header id="menu">
+			<header id="menu" class="now">
 				<div id="menu-base"><?
 					echo $name;
 					if($id)
 						echo "<br>Point"; ?>
 				</div>
 				<div id="menu-hover">
-					<a href="<? echo $u; ?>">Point<br>Centre</a>
+					<a href="<? echo $u; ?>">Point<br>Centre for Contemporary Art, Nicosia, Cyprus<br/>Annual Reports, 2012–2015</a>
 					<br>
 					<br>
 					<div style="display: inline-block;"><? 

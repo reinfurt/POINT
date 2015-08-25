@@ -18,12 +18,6 @@ body {
 	background-color: #FFF;
 }
 
-header {
-}
-
-.caption {
-	visibility: hidden; 
-}
 a.img-container:hover + .caption {
 	visibility: visible;
 }
@@ -50,7 +44,6 @@ a:active {
 
 header {
 	font-size: 48px;
-	letter-spacing: -1.25px;
 	position: fixed;
 	cursor: pointer;
 	line-height: 48px;
@@ -78,6 +71,18 @@ header {
 	color: #FED71B;
 }
 
+
+/* types */
+
+.now {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 16px;
+	color: #F30;
+	z-index: 100;
+}
+
+
 /* ids */
 #page {
 	padding: 10px;
@@ -101,7 +106,6 @@ header {
 @media screen and (max-device-width: 568px) {
 	#menu {
 		font-size: 40px;
-		letter-spacing: -1.5px;
 		position: static;
 		line-height: 40px;
 	}
