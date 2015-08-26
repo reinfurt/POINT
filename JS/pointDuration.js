@@ -15,6 +15,7 @@ var linecolor = "#000";
 var fillcolor = "#000";
 var linewidth = 1;
 var timeout;
+var counter = 0;
 var canvas;
 var context;
 var delay = 500;
@@ -36,7 +37,7 @@ function initPointDuration(canvasId) {
         context.fillStyle = fillcolor; 
 	// canvas needs to have font immediately loaded in order to draw
 	// and font loading is a background task, so loaded in dummy div of d-o-m
-	context.font = "96px futura-book"; 
+	context.font = "196px futura-book"; // [96]
 	context.textAlign = "left"; 
 	context.textBaseline = "bottom"; // default = alphabetic
 	updatePointDuration();
@@ -60,23 +61,32 @@ function updatePointDuration() {
 	minute = checkDigit(minute);
 	second = checkDigit(second);
 
-	blinkYear = !Boolean(blinkYear);
+	// blink year, increment year?
 
-	if (!Boolean(blinkYear)) {
-		// year = ". . . . ";
-		year = year - 1;
-		// context.clearRect(0, 0, canvas.width-360, canvas.height/2);
-		// context.clearRect(0, 0, canvas.width/1.42, canvas.height/2);
-	} 
+	// year = year - (counter % 3);
+	// console.log(counter % 3);
 
+	yearstring = year + ".";
 	datestring = year + "." + month + "." + day;
 	timestring = hour + "." + minute + "." + second;
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.fillText(datestring, canvas.width/2, canvas.height/2);
-	context.fillText(timestring, canvas.width/2, canvas.height);
+	context.fillText(yearstring, 0, canvas.height);
+ 	// context.fillText(datestring, 0, canvas.height/2);
+	// context.fillText(timestring, 0, canvas.height);
+
+	blinkYear = !Boolean(blinkYear);
+
+	if (!Boolean(blinkYear)) {
+		// year = ". . . . ";
+		// year = year - 1;
+		// context.clearRect(0, 0, canvas.width/1.25, canvas.height);
+		context.clearRect(canvas.width/1.25, 0, canvas.width, canvas.height);
+		// context.clearRect(0, 0, canvas.width/1.42, canvas.height/2);
+	} 
 
 
+	counter++;
 	timeout = setTimeout(function(){updatePointDuration();}, delay);
 }
 
@@ -90,6 +100,24 @@ function checkDigit(i) {
 		i = "0" + i
 	};  
 	return i;
+}
+
+
+function selectYear(year) {
+
+	// flip through year to next one
+
+        // year = year - (counter % 3);
+        year = year - 1;
+	yearstring = year + ".";
+
+        console.log(counter % 3);
+        console.log("year : " + year);
+
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.fillText(yearstring, 0, canvas.height);
+
+	return year;
 }
 
 
