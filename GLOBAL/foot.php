@@ -4,13 +4,14 @@
 			</div>
 			-->
 
-			<div id="man">
+			<div id="sign">
 				<!-- <img src="MEDIA/man-k.jpg" style="width: 100%;"> --> 
 				<!-- <img src="MEDIA/2015-door.jpg" style="width: 100%;"> -->
-				<img src="MEDIA/2015-door-crop-3.jpg" style="width: 100%;">
+				<!-- <img src="MEDIA/2015-door-crop-3.jpg" style="width: 100%;"> -->
+				<!-- <img src="MEDIA/2015-door-crop-3-k.jpg" style="width: 100%;"> -->
 			</div>
 
-			<div id="clock" onmouseover="selectYear(2015);">
+			<div id="clock" onmouseover="selectYear(2015);" onmouseout="displayYear(2014);">
 				<canvas id="canvas0" width="600" height="220"></canvas>
 			</div>
 

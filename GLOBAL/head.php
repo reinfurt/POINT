@@ -61,7 +61,7 @@ $name = $obj['name1'] ? $obj['name1'] : "Point";
 This website is a filing cabinet for the ANNUAL REPORTS of
 <br/>POINT Centre for Contemporary Art, Nicosia, Cyprus since 2012.
 <br/>
-<span style='color:#000;'>Select a year to review . . .</span>
+Select a year to review . . . 
 
 <br/>
 <br/>Meanwhile, <a href=''>here</a> is what's happening now.

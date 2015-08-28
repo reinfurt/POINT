@@ -107,6 +107,9 @@ function selectYear(year) {
 
 	// flip through year to next one
 
+	fillcolor="#F30";
+        context.fillStyle = fillcolor;	
+
         // year = year - (counter % 3);
         year = year - 1;
 	yearstring = year + ".";
@@ -119,6 +122,28 @@ function selectYear(year) {
 
 	return year;
 }
+
+
+function displayYear(year) {
+
+	// flip through year to next one
+
+	fillcolor="#000";
+        context.fillStyle = fillcolor;	
+
+        // year = year - (counter % 3);
+        year = year - 1;
+	yearstring = year + ".";
+
+        console.log(counter % 3);
+        console.log("year : " + year);
+
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.fillText(yearstring, 0, canvas.height);
+
+	return year;
+}
+
 
 
 

@@ -41,7 +41,7 @@ a.img-container:hover + .caption {
 a:link,
 a:visited {
 	text-decoration: none;
-	color: #00F;
+	color: #F30;
 }
 a.r:hover {
 	color: #FB3139;
@@ -95,7 +95,7 @@ header {
 	/* font-family: "tiredofcourier-italic", Courier, "Courier New", monospace; */
 	font-size: 15px;
 	line-height: 17px;
-	color: #F30;
+	/* color: #F30; */
 	z-index: 100;
 }
 
@@ -120,11 +120,17 @@ header {
 	width: 200px;
 }
 
-#man {
+#sign {
 	position: fixed;
 	bottom: 20px;	
 	right: 20px;
 	width: 200px;
+        height: 282px;
+	background: url("../MEDIA/2015-door-crop-3-k-lo.jpg");
+}
+
+#sign:hover {
+	background: url("../MEDIA/2015-door-crop-3-lo.jpg");
 }
 
 #body {
