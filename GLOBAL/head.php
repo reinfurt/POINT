@@ -66,15 +66,15 @@ $t_res = mysql_query($t_sql);
 		<title><? echo $doc_title; ?></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="GLOBAL/global.css">
-		<script type="text/javascript" src="JS/pointDuration.js"></script>
-		<script type="text/javascript" src="JS/animate-message.js"></script>
+		<link rel="stylesheet" href="static/css/global.css">
+		<script type="text/javascript" src="static/js/pointDuration.js"></script>
+		<script type="text/javascript" src="static/js/animate-message.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body>
 		<!--  preload futura-book so that canvas has it immediately when it calls for it -->
 		<!--  this could be replaced by instead using onload or another event to startPointDuration -->
-		<div style="font-family: futura-book;"></div>
-
+		<!-- div class="futura-book">a</div -->
 		<div id="page">
 			<header id="menu" class="now">
 				<p>
