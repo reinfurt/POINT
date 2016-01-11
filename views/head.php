@@ -1,7 +1,6 @@
 <?
 // path to config file
-$config = $_SERVER["DOCUMENT_ROOT"];
-$config = $config."/point/open-records-generator/config/config.php";
+$config = "open-records-generator/config/config.php";
 require_once($config);
 
 // specific to this 'app'
