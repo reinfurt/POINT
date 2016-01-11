@@ -12,11 +12,9 @@ class URL extends URL_Base
 	function __construct()
 	{
 		global $oo;
-		global $uri;
-		// $urls = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
+		global $uri; // declared in config.php
 		
-		// get rid of *these* magic numbers
-		// $base = array_slice($urls, 0, 4); // == ["admin", [view]]
+		// get rid of magic number. . . 
 		$urls = array_slice($uri, 1);
 		
 		try 

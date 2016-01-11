@@ -8,7 +8,7 @@ class URL extends URL_Base
 	{
 		global $oo;
 		$urls = explode('/', $_SERVER['REQUEST_URI']);
-		$urls = array_slice($urls, 1);
+		$urls = array_slice($urls, 2);
 		
 		// check that the object that this URL refers to exists
 		try
