@@ -55,6 +55,9 @@ a.y:hover {
 a:active {
 }
 
+p {
+	margin-top: 0px;
+}
 /* header */
 
 header {
@@ -62,11 +65,13 @@ header {
 	position: fixed;
 	cursor: pointer;
 	line-height: 48px;
+	max-width: 40vw;
 }
 
 #menu-base {
 	position: fixed;
 	visibility: visible;
+
 }
 
 #menu-hover {
@@ -87,6 +92,10 @@ header {
 }
 
 
+#ticker-display {
+color: #0000dd;
+}
+
 /* types */
 
 .now {
@@ -106,11 +115,19 @@ header {
 }
 
 
+.h-centre {
+	left: 50%;
+	transform: translateX(-50%);
+}
 #clock {
 	position: fixed;
-	top: 20px;	
+	
+	top: 0px;
+	/*left: 0px;*/
+	/* top: 20px;	
 	left: 50%;
-	margin-left: -300px;
+	margin-left: -300px;*/
+	cursor: pointer;
 }
 
 #neon {
@@ -140,8 +157,14 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 }
+.hidden {
+	display: none;
+}
 
 @media screen and (max-device-width: 568px) {
+	header {
+		max-width: 100vw;
+	}
 	#menu {
 		font-size: 40px;
 		position: static;
@@ -150,6 +173,7 @@ header {
 	#menu-base, 
 	#menu-hover {
 		position: static;
+		max-width: 100vw;
 	}
 	
 	#menu-base {
@@ -160,5 +184,9 @@ header {
 	#menu-hover {
 		display: none;
 		visibility: visible;
+	}
+	
+	#sign {
+		position: static;
 	}
 }
