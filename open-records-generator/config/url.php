@@ -12,10 +12,12 @@ class URL extends URL_Base
 	function __construct()
 	{
 		global $oo;
+		global $uri;
+		// $urls = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
 		
-		$urls = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
-		$base = array_slice($urls, 0, 3); // == ["admin", [view]]
-		$urls = array_slice($urls, 3);
+		// get rid of *these* magic numbers
+		// $base = array_slice($urls, 0, 4); // == ["admin", [view]]
+		$urls = array_slice($uri, 1);
 		
 		try 
 		{

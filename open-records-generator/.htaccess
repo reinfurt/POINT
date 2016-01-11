@@ -1,4 +1,4 @@
-AuthUserFile /Users/lily/Sites/.htpasswd
+AuthUserFile /usr/www/users/reinfurt/dev.o-r-g.com/point/.htpasswd
 AuthName "OPEN-RECORDS-GENERATOR"
 AuthType Basic
 Require valid-user
