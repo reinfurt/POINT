@@ -36,7 +36,7 @@ var year =
 		min: 2012,
 		max: 2016
 	};
-var url = "http://local.org.dev/point/annual-reports/";
+// var url = "http://local.org.dev/point/annual-reports/";
 
 function initPointDuration(canvasId) 
 {
@@ -95,9 +95,10 @@ function updatePointDuration()
 	dot_timer = setTimeout(function(){updatePointDuration();}, dot_delay);
 }
 
-function initCycle()
+function initCycle(u)
 {
 	var now = new Date();
+	url = u + "annual-reports/";
 	year.now = now.getFullYear();
 	year.display = year.now;
 	canvas_container = document.getElementById('clock');

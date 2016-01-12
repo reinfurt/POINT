@@ -4,7 +4,7 @@
 		<div 
 			id="clock" 
 			class="h-centre"
-			onmouseover="initCycle();"
+			onmouseover="initCycle('<? echo $host; ?>');"
 			onmouseout="stopCycle();"
 			onclick="javascript:location.href='<? echo $host; ?>annual-reports/2015'"
 		>
