@@ -23,11 +23,11 @@
 			class="h-centre"
 			onmouseover="init_cycle('year', <? echo $year; ?>, '<? echo $host; ?>');"
 			onmouseout="stop_cycle();"><?
-			?><span class="thou">2</span><?
-			?><span class="hund">O</span><?
-			?><span class="tens">1</span><?
-			?><span class="ones">6</span><?
-			?><span id="dot" class="blink">.</span><?
+			?><span class="thou"></span><?
+			?><span class="hund"></span><?
+			?><span class="tens"></span><?
+			?><span class="ones"></span><?
+			?><span id="dot" class="blink"></span><?
 		?></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 		<script>
