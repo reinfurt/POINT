@@ -4,8 +4,8 @@
 		<div 
 			id="clock" 
 			class="h-centre"
-			onmouseover="selectYear(2015);" 
-			onmouseout="displayYear(2014);"
+			onmouseover="initCycle();"
+			onmouseout="stopCycle();"
 			onclick="javascript:location.href='<? echo $host; ?>annual-reports/2015'"
 		>
 			<canvas id="canvas0"></canvas>

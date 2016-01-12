@@ -9,18 +9,34 @@
 
 // globals
 
-var u;
-var mid;
+// canvas settings
 var bgcolor = "#FFF";
 var linecolor = "#000";
 var fillcolor = "#000";
 var linewidth = 1;
-var timeout;
-var counter = 0;
+
+// canvas vars
+var canvas_container;
+var canvas_mid;
 var canvas;
 var context;
-var delay = 500;
-var blinkYear = true;
+
+// timing variables
+var dot_delay = 500;
+var dot_timer;
+
+var year_delay = 1000;
+var year_timer;
+
+var dot_blink = true;
+
+// set these programmatically based on db (php)
+var year =
+	{
+		min: 2012,
+		max: 2016
+	};
+var url = "http://local.org.dev/point/annual-reports/";
 
 function initPointDuration(canvasId) 
 {
@@ -28,21 +44,17 @@ function initPointDuration(canvasId)
 	
 	live = 
 	{
-		// width: canvas.width,
-		// height: canvas.height
 		width: window.innerWidth / 2,
 		height: 250
 	};
-	u = live.height;
 	
-
 	// set canvas size
 	canvas.width = live.width*2;
 	canvas.height = live.height*2;
 	canvas.style.width = live.width.toString().concat('px');
 	canvas.style.height = live.height.toString().concat('px');
 
-	mid = 
+	canvas_mid = 
 	{
 		width: canvas.width / 2,
 		height: canvas.height / 2
@@ -52,9 +64,6 @@ function initPointDuration(canvasId)
 	context.strokeStyle = linecolor;
 	context.lineWidth = linewidth;
 	context.fillStyle = fillcolor;
-
-	// canvas needs to have font immediately loaded in order to draw
-	// and font loading is a background task, so loaded in dummy div of d-o-m
 	
 	// todo: adjust the font based on the viewport size
 	context.font = "200px futura-book"; // [96]
@@ -67,55 +76,75 @@ function initPointDuration(canvasId)
 function updatePointDuration() 
 {
 	var now = new Date();
-	var year = now.getFullYear();
-	
-// 	var hour = now.getHours();
-// 	var minute = now.getMinutes();
-// 	var second = now.getSeconds();
-// 	var month = now.getMonth();
-// 	var day = now.getDate();
-// 	month = checkDigit(month);
-// 	day = checkDigit(day);
-// 	hour = checkDigit(hour);
-// 	minute = checkDigit(minute);
-// 	second = checkDigit(second);
+	year.now = now.getFullYear();
 
-// 	blink year, increment year?
-// 	year = year - (counter % 3);
-// 	console.log(counter % 3);
-
-	yearstring = year + ".";
-	yearstring = yearstring.replace("0", "O");
-	// datestring = year + "." + month + "." + day;
-	// timestring = hour + "." + minute + "." + second;
+	year.string = year.now + ".";
+	year.string = year.string.replace("0", "O");
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.fillText(yearstring, mid.width, mid.height);
-	blinkYear = !Boolean(blinkYear);
+	context.fillText(year.string, canvas_mid.width, canvas_mid.height);
+	dot_blink = !Boolean(dot_blink);
 
-	if(!Boolean(blinkYear)) 
+	if(!Boolean(dot_blink)) 
 	{
-		yearstring = yearstring.replace(".", " ");
+		year.string = year.string.replace(".", " ");
 		context.clearRect(0, 0, canvas.width, canvas.height);
-		context.fillText(yearstring, mid.width, mid.height);
+		context.fillText(year.string, canvas_mid.width, canvas_mid.height);
 	}
 	
-	counter++;
-	timeout = setTimeout(function(){updatePointDuration();}, delay);
+	dot_timer = setTimeout(function(){updatePointDuration();}, dot_delay);
 }
 
-
-function checkDigit(i) 
+function initCycle()
 {
-	// add zero in front of numbers < 10
-	if(i < 10)
-		i = "0" + i;
+	var now = new Date();
+	year.now = now.getFullYear();
+	year.display = year.now;
+	canvas_container = document.getElementById('clock');
+	clearTimeout(dot_timer);
 	
-	return i;
+	cycle();
+	
+	if(!year_timer)
+		year_timer = setInterval(function(){cycle();}, year_delay);
+	else
+		console.log('running');
 }
+
+function cycle()
+{
+	if(year.display == year.min)
+		year.display = year.max;
+	else
+		year.display--;
+		
+	fillcolor = "#F30";
+	context.fillStyle = fillcolor;
+	
+	year.string = year.display + ".";
+	year.string = year.string.replace("0", "O");
+	
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.fillText(year.string, canvas_mid.width, canvas_mid.height);
+	
+	canvas_container.onclick = function(){
+		stopCycle();
+		location.href = url + year.display;
+	};
+}
+
+function stopCycle()
+{
+	clearInterval(year_timer);
+	year_timer = null;
+}
+
+/* old functions
 
 function selectYear(year) 
 {
+	var d = document.getElementById('clock');
+	
 	clearTimeout(timeout);
 	// flip through year to next one
 	fillcolor="#F30";
@@ -129,8 +158,9 @@ console.log(counter % 3);
 console.log("year : " + year);
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.fillText(yearstring, mid.width, mid.height);
-
+	context.fillText(yearstring, canvas_mid.width, canvas_mid.height);
+	
+	d.onclick = function() {location.href = "http://local.org.dev/point/annual-reports/2013"};
 	return year;
 }
 
@@ -147,9 +177,20 @@ console.log(counter % 3);
 console.log("year : " + year);
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.fillText(yearstring, mid.width, mid.height);
+	context.fillText(yearstring, canvas_mid.width, canvas_mid.height);
 
 	timeout = setTimeout(function(){updatePointDuration();}, delay);
 	
 	return year;
 }
+
+
+function checkDigit(i) 
+{
+	// add zero in front of numbers < 10
+	if(i < 10)
+		i = "0" + i;
+	
+	return i;
+}
+*/
