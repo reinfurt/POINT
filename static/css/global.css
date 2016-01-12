@@ -119,6 +119,46 @@ color: #0000dd;
 	padding: 10px;
 }
 
+#year {
+	/*display: none;*/
+	position: fixed;
+	top: 0px;
+	font-size: 200px;
+	line-height: 200px;
+	font-family: futura-book;
+	cursor: pointer;
+
+}
+
+.blink {
+	animation: blink 2s steps(2, start) infinite;
+	-webkit-animation: blink 2s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+.animated {
+	-webkit-animation-delay: 1s;
+	-webkit-animation-duration: 3s;
+	animation-delay: 1s;
+	animation-duration: 3s;
+}
+
+#dot {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
 
 .h-centre {
 	left: 50%;
@@ -166,7 +206,7 @@ color: #0000dd;
 	display: none;
 }
 
-@media screen and (max-device-width: 568px) {
+@media screen and (max-width: 568px) {
 	header {
 		max-width: 100vw;
 	}
@@ -193,5 +233,9 @@ color: #0000dd;
 	
 	#sign {
 		position: static;
+	}
+	#year {
+		font-size: 100px;
+		line-height: 100px;
 	}
 }

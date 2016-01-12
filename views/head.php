@@ -34,8 +34,10 @@ $now_children = $oo->children(1);
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
+		<link rel="stylesheet" href="<? echo $host; ?>static/css/animate.min.css">
 		<script type="text/javascript" src="<? echo $host; ?>static/js/pointDuration.js"></script>
 		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
+		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-year.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body>

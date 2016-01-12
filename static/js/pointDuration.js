@@ -25,8 +25,8 @@ var context;
 var dot_delay = 500;
 var dot_timer;
 
-var year_delay = 1000;
-var year_timer;
+var yearDelay = 1000;
+var yearTimer;
 
 var dot_blink = true;
 
@@ -95,7 +95,7 @@ function updatePointDuration()
 	dot_timer = setTimeout(function(){updatePointDuration();}, dot_delay);
 }
 
-function initCycle(u)
+function initCanvasCycle(u)
 {
 	var now = new Date();
 	url = u + "annual-reports/";
@@ -104,15 +104,15 @@ function initCycle(u)
 	canvas_container = document.getElementById('clock');
 	clearTimeout(dot_timer);
 	
-	cycle();
+	canvasCycle();
 	
-	if(!year_timer)
-		year_timer = setInterval(function(){cycle();}, year_delay);
+	if(!yearTimer)
+		yearTimer = setInterval(function(){canvasCycle();}, yearDelay);
 	else
 		console.log('running');
 }
 
-function cycle()
+function canvasCycle()
 {
 	if(year.display == year.min)
 		year.display = year.max;
@@ -136,8 +136,8 @@ function cycle()
 
 function stopCycle()
 {
-	clearInterval(year_timer);
-	year_timer = null;
+	clearInterval(yearTimer);
+	yearTimer = null;
 }
 
 /* old functions
