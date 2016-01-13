@@ -1,6 +1,6 @@
 <?
 if($uu->id)
 {
-?><div id="body"><? echo nl2br($item['body']); ?></div><?
+?><div id="main"><? echo nl2br($item['body']); ?></div><?
 }
 ?>

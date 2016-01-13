@@ -27,8 +27,8 @@ html {
 
 body { 
 	font-family: "Palatino", Helvetica, Arial, sans-serif;
-	font-size: 20px;
-	line-height: 26px;
+	font-size: 16px;
+	line-height: 20px;
 	background-color: #FFF;
 }
 
@@ -187,7 +187,7 @@ color: #0000dd;
 	bottom: 20px;	
 	right: 20px;
 	width: 200px;
-    height: 282px;
+	height: 282px;
 	background: url("../../media/2015-door-crop-3-k-lo.jpg");
 }
 
@@ -195,12 +195,16 @@ color: #0000dd;
 	background: url("../../media/2015-door-crop-3-lo.jpg");
 }
 
-#body {
+#main {
 	/* max-width: 500px; */
+	position: relative;
 	width: 60%;
-	margin-top: 300px;
+	margin-top: 250px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 20px;
+	/* background-color: #FFF; */	
+	z-index: 100;
 }
 .hidden {
 	display: none;
