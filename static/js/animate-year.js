@@ -38,15 +38,20 @@ var color =
 function init_year(year_id, year_sel)
 {
 	year_div = document.getElementById(year_id);
+	digit_spans = year_div.childNodes;
 	if(year_sel)
+	{
 		year.sel = year_sel;
 	
-	digit_spans = year_div.childNodes;
-	
-	// calling this function here makes the very dangerous assumption that
-	// digit_spans is of length at least 4 (number of digits in year.sel)
-	// and the first four spans correspond to the four digits of a year.
-	// should probably make calling it safer somehow.
+		for(var i = 0; i < digit_spans.length; i++)
+			digit_spans[i].className = digit_spans[i].className.replace( /(?:^|\s)hidden(?!\S)/g , ' visible' );
+		// calling this function here makes the very dangerous assumption that
+		// digit_spans is of length at least 4 (number of digits in year.sel)
+		// and the first four spans correspond to the four digits of a year.
+		// should probably make calling it safer somehow.
+		
+	}
+
 	replace_year(digit_spans, year.sel);
 }
 
@@ -101,8 +106,6 @@ function cycle()
 	};
 }
 
-
-
 function replace_year(digits, y)
 {
 	// replace zeros with capital 'o's
@@ -114,4 +117,18 @@ function replace_year(digits, y)
 	for(i = 0; i < y_str.length; i++)
 		digits[i].innerHTML = y_str[i];
 	digits[i].innerHTML = '.';
+}
+
+function show_reports()
+{
+	var reports = document.getElementsByClassName("report-container");
+	for(var i = 0; i < reports.length; i++)
+		reports[i].className = reports[i].className.replace( /(?:^|\s)hidden(?!\S)/g , ' visible' );
+}
+
+function hide_reports()
+{
+	var reports = document.getElementsByClassName("report-container");
+	for(var i = 0; i < reports.length; i++)
+		reports[i].className = reports[i].className.replace( /(?:^|\s)visible(?!\S)/g , ' hidden' );
 }

@@ -7,8 +7,6 @@
 		?><div 
 			id="year"
 			class="h-centre"
-			onmouseover="init_cycle('year', <? echo $year; ?>, '<? echo $host; ?>');"
-			onmouseout="stop_cycle();"
 		><?
 			?><span class="thou hidden"></span><?
 			?><span class="hund hidden"></span><?

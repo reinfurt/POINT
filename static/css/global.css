@@ -66,6 +66,11 @@ p {
     right: 0px;
 }
 
+#reports-alt {
+	position: static;
+	overflow: auto;
+}
+
 .report-container {
 	display: inline-block;
 	float: right;
@@ -119,8 +124,6 @@ header {
 	font-size: 200px;
 	line-height: 200px;
 	font-family: futura-book;
-	cursor: pointer;
-
 }
 
 #main {
