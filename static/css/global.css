@@ -78,6 +78,8 @@ header {
 
 #ticker-display {
 	color: #0000dd;
+	position: absolute;
+	width: 40vw;
 }
 
 /* classes */
@@ -114,7 +116,8 @@ header {
 	z-index: 100;
 }
 .hidden {
-	display: none;
+	visibility: hidden;
+	/* display: none; */
 }
 
 .invisible {
