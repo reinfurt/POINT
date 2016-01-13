@@ -30,17 +30,13 @@ body {
 	font-size: 16px;
 	line-height: 20px;
 	background-color: #FFF;
+	margin: 0px;
 }
 
 a.img-container:hover + .caption {
 	visibility: visible;
 }
 
-.futura-book {
-	font-family: futura-book;
-	/*display: none;*/
-	
-}
 
 /* link styles */
 a:link,
@@ -63,62 +59,59 @@ a:active {
 p {
 	margin-top: 0px;
 }
+
+#reports {
+	position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.report-container {
+	display: inline-block;
+	float: right;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+.report-img {
+	width: 200px;
+	vertical-align: top;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+a:hover > .report-img {
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
 /* header */
-
 header {
-	font-size: 48px;
-	position: fixed;
-	cursor: pointer;
-	line-height: 48px;
+	/*position: fixed;*/
 	max-width: 40vw;
+	padding: 20px;
+	/* cursor: pointer; */
+	font-size: 48px;
+	line-height: 48px;
 }
-
-#menu-base {
-	position: fixed;
-	visibility: visible;
-
-}
-
-#menu-hover {
-	position: fixed;
-	visibility: hidden;
-}
-
-.menuItemContainer:nth-of-type(3n+0) > a:hover {
-	color: #ff0000;
-}
-
-.menuItemContainer:nth-of-type(3n+1) > a:hover {
-	color: #0000ff;
-}
-
-.menuItemContainer:nth-of-type(3n+2) > a:hover {
-	color: #FED71B;
-}
-
 
 #ticker-display {
-color: #0000dd;
+	color: #0000dd;
 }
 
-/* types */
-
+/* classes */
 .now {
 	font-family: Helvetica, Arial, sans-serif;
-	/* font-family: "Andale Mono", Arial, sans-serif; */
-	/* font-family: "tiredofcourier-italic", Courier, "Courier New", monospace; */
 	font-size: 15px;
 	line-height: 17px;
-	/* color: #F30; */
 	z-index: 100;
 }
 
-
-/* ids */
-#page {
-	padding: 10px;
+.futura-book {
+	font-family: futura-book;
 }
 
+/* ids */
 #year {
 	/*display: none;*/
 	position: fixed;
@@ -130,9 +123,29 @@ color: #0000dd;
 
 }
 
+#main {
+	position: relative;
+	width: 60%;
+	margin-top: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	/* background-color: #FFF; */	
+	z-index: 100;
+}
+.hidden {
+	visibility: hidden;
+	/*display: none;*/
+}
+
+#dot {
+	color: red;
+}
+
+/* animations */
 .blink {
-	animation: blink 2s steps(2, start) infinite;
-	-webkit-animation: blink 2s steps(2, start) infinite;
+	animation: blink 1s steps(2, start) infinite;
+	-webkit-animation: blink 1s steps(2, start) infinite;
 }
 @keyframes blink {
   to {
@@ -145,101 +158,31 @@ color: #0000dd;
   }
 }
 
-
-.animated {
-	-webkit-animation-delay: 1s;
-	-webkit-animation-duration: 3s;
-	animation-delay: 1s;
-	animation-duration: 3s;
-}
-
-#dot {
-	-webkit-animation-duration: 1s;
-	-webkit-animation-iteration-count: infinite;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-}
-
+/* utilities */
 .h-centre {
 	left: 50%;
 	transform: translateX(-50%);
 }
-#clock {
-	position: fixed;
-	
-	top: 0px;
-	/*left: 0px;*/
-	/* top: 20px;	
-	left: 50%;
-	margin-left: -300px;*/
-	cursor: pointer;
-}
 
-#neon {
-	position: fixed;
-	bottom: 20px;	
-	left: 20px;
-	width: 200px;
-}
-
-#sign {
-	position: fixed;
-	bottom: 20px;	
-	right: 20px;
-	width: 200px;
-	height: 282px;
-	background: url("../../media/2015-door-crop-3-k-lo.jpg");
-}
-
-#sign:hover {
-	background: url("../../media/2015-door-crop-3-lo.jpg");
-}
-
-#main {
-	/* max-width: 500px; */
-	position: relative;
-	width: 60%;
-	margin-top: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 20px;
-	/* background-color: #FFF; */	
-	z-index: 100;
-}
-.hidden {
-	display: none;
-}
-
+/* mobile */
 @media screen and (max-width: 568px) {
 	header {
-		max-width: 100vw;
-	}
-	#menu {
-		font-size: 40px;
-		position: static;
-		line-height: 40px;
-	}
-	#menu-base, 
-	#menu-hover {
 		position: static;
 		max-width: 100vw;
 	}
 	
-	#menu-base {
-		visibility: visible;
-		display: block;
-	}
-	
-	#menu-hover {
-		display: none;
-		visibility: visible;
-	}
-	
-	#sign {
-		position: static;
-	}
 	#year {
 		font-size: 100px;
 		line-height: 100px;
+	}
+	
+	#main {
+		width: 80%;
+	}
+	
+	#reports {
+		position: static;
+		bottom: 0px;
+		right: 0px;
 	}
 }

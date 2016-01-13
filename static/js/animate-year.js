@@ -40,11 +40,6 @@ function init_year(year_id, year_sel)
 	year_div = document.getElementById(year_id);
 	if(year_sel)
 		year.sel = year_sel;
-	else
-	{
-		var dt = new Date();
-		year.sel = dt.getFullYear();
-	}
 	
 	digit_spans = year_div.childNodes;
 	

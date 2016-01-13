@@ -26,6 +26,10 @@ $item = $oo->get($uu->id);
 $title = $item["name1"] ? $item["name1"] : "Point";
 
 $now_children = $oo->children(1);
+
+$is_report = false;
+if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
+	$is_report = true;
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,8 +45,10 @@ $now_children = $oo->children(1);
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body>
-		<div id="page">
-			<header id="menu" class="now">
+		<div id="page"><?
+			if(!$is_report)
+			{
+			?><header class="now">
 				<p>
 					<a href="<? echo $host; ?>">This website</a> is a filing 
 					cabinet for the ANNUAL REPORTS of POINT Centre for 
@@ -63,4 +69,5 @@ $now_children = $oo->children(1);
 					echo $c['body']."<br><br>";
 				}
 				?></div>
-			</header>
+			</header><?
+			} ?>

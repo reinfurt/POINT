@@ -1,18 +1,4 @@
-		<a href="<? echo $host; ?>annual-reports/2015">
-			<div id="sign"></div>
-		</a>
-<!-- 
-		<div 
-			id="clock" 
-			class="h-centre"
-			onmouseover="initCanvasCycle('<? echo $host; ?>');"
-			onmouseout="stopCycle();"
-			onclick="javascript:location.href='<? echo $host; ?>annual-reports/2015'"
-		>
-			<canvas id="canvas0"></canvas>
-		</div>
- -->	
- <?
+<?
  		$year = $uu->url;
  		if(intval($year))
  			$year = intval($year);
@@ -22,11 +8,12 @@
 			id="year"
 			class="h-centre"
 			onmouseover="init_cycle('year', <? echo $year; ?>, '<? echo $host; ?>');"
-			onmouseout="stop_cycle();"><?
-			?><span class="thou"></span><?
-			?><span class="hund"></span><?
-			?><span class="tens"></span><?
-			?><span class="ones"></span><?
+			onmouseout="stop_cycle();"
+		><?
+			?><span class="thou hidden"></span><?
+			?><span class="hund hidden"></span><?
+			?><span class="tens hidden"></span><?
+			?><span class="ones hidden"></span><?
 			?><span id="dot" class="blink"></span><?
 		?></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
