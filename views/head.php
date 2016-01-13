@@ -39,8 +39,6 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/animate.min.css">
-		<script type="text/javascript" src="<? echo $host; ?>static/js/pointDuration.js"></script>
-		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
 		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-year.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
@@ -48,7 +46,9 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 		<div id="page"><?
 			if(!$is_report)
 			{
-			?><header class="now">
+			?>
+			<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
+			<header class="now">
 				<p>
 					<a href="<? echo $host; ?>">This website</a> is a filing 
 					cabinet for the ANNUAL REPORTS of POINT Centre for 
@@ -69,5 +69,12 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 					echo $c['body']."<br><br>";
 				}
 				?></div>
+				<script type="text/javascript">
+					//var animate = !(checkCookie("animateCookie"));
+					//setCookie("animateCookie");
+					animate = true;
+					tickerDelay = 40;
+					document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
+				</script>
 			</header><?
 			} ?>

@@ -44,7 +44,7 @@ function init_year(year_id, year_sel)
 		year.sel = year_sel;
 	
 		for(var i = 0; i < digit_spans.length; i++)
-			digit_spans[i].className = digit_spans[i].className.replace( /(?:^|\s)hidden(?!\S)/g , ' visible' );
+			digit_spans[i].className = digit_spans[i].className.replace( /(?:^|\s)invisible(?!\S)/g , ' visible' );
 		// calling this function here makes the very dangerous assumption that
 		// digit_spans is of length at least 4 (number of digits in year.sel)
 		// and the first four spans correspond to the four digits of a year.
@@ -130,5 +130,5 @@ function hide_reports()
 {
 	var reports = document.getElementsByClassName("report-container");
 	for(var i = 0; i < reports.length; i++)
-		reports[i].className = reports[i].className.replace( /(?:^|\s)visible(?!\S)/g , ' hidden' );
+		reports[i].className = reports[i].className.replace( /(?:^|\s)hidden(?!\S)/g , ' invisible' );
 }
