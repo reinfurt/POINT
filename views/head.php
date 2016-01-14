@@ -60,15 +60,15 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 				</p>
 				<div id="ticker-wrapper">
 					<div id="ticker-display"></div>
+					<div id="ticker-source" class="hidden"><?
+					foreach($now_children as $c)
+					{
+						echo $c['name1']." / ";
+						echo $c['deck']." / ";
+						echo $c['body']."<br><br>";
+					}
+					?></div>
 				</div>
-				<div id="ticker-source" class="hidden"><?
-				foreach($now_children as $c)
-				{
-					echo $c['name1']." / ";
-					echo $c['deck']." / ";
-					echo $c['body']."<br><br>";
-				}
-				?></div>
 				<script type="text/javascript">
 					//var animate = !(checkCookie("animateCookie"));
 					//setCookie("animateCookie");

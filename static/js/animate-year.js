@@ -130,5 +130,5 @@ function hide_reports()
 {
 	var reports = document.getElementsByClassName("report-container");
 	for(var i = 0; i < reports.length; i++)
-		reports[i].className = reports[i].className.replace( /(?:^|\s)hidden(?!\S)/g , ' invisible' );
+		reports[i].className = reports[i].className.replace( /(?:^|\s)visible(?!\S)/g , ' hidden' );
 }
