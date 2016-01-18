@@ -1,22 +1,17 @@
 <?
- 		$year = $uu->url;
- 		if(intval($year))
- 			$year = intval($year);
- 		else
- 			$year = "null";
-		?><div 
-			id="year"
-			class="h-centre"
-			onmouseover="init_cycle('year', <? echo $year; ?>, '<? echo $host; ?>');"
-			onmouseout="stop_cycle();"
-		><?
-			?><span class="thou hidden"></span><?
-			?><span class="hund hidden"></span><?
-			?><span class="tens hidden"></span><?
-			?><span class="ones hidden"></span><?
+$year = $uu->url;
+if(intval($year))
+	$year = intval($year);
+else
+	$year = "null";
+
+		?><div id="year" class="h-centre"><?
+			?><span class="thou invisible"></span><?
+			?><span class="hund invisible"></span><?
+			?><span class="tens invisible"></span><?
+			?><span class="ones invisible"></span><?
 			?><span id="dot" class="blink"></span><?
 		?></div>
-		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 		<script>
 			// don't initiate canvas until fonts are loaded,
 			// using google / typekit webfont loader
@@ -24,20 +19,12 @@
 			WebFont.load({
 				custom: {
 					families: ['futura-book'],
-					urls: ['<? echo $host; ?>static/css/global.css']
+					urls: ['<? echo $host; ?>static/css/fonts.css']
 				},
 				active: function() {
 					init_year('year', <? echo $year; ?>);
-					// initPointDuration("canvas0");
 				}
 			});
-		</script>
-		<script type="text/javascript">
-			//var animate = !(checkCookie("animateCookie"));
-			//setCookie("animateCookie");
-			animate = true;
-			tickerDelay = 40;
-			document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
 		</script>
 	</body>
 </html>
