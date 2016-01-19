@@ -58,36 +58,3 @@ function process_md($b)
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body>
-		<div id="page"><?
-		if(!$is_report)
-			{
-			?>
-			<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-			<header class="now">
-				<p>
-					<a href="<? echo $host; ?>">This website</a> is a filing 
-					cabinet for the ANNUAL REPORTS of POINT Centre for 
-					Contemporary Art, Nicosia, Cyprus since 2012. Select a year 
-					to review. . .
-				</p>
-				<p>
-				Meanwhile, here is what's happening now:
-				</p>
-				<div id="ticker-wrapper">
-					<div id="ticker-display"></div>
-					<div id="ticker-source" class="hidden"><?					
-					foreach($now_children as $c)
-					{
-						echo process_md($c['name1']." / ".$c['deck']." / ".$c['body']);
-					}
-					?></div>
-				</div>
-				<script type="text/javascript">
-					//var animate = !(checkCookie("animateCookie"));
-					//setCookie("animateCookie");
-					animate = true;
-					tickerDelay = 40;
-					document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
-				</script>
-			</header><?
-			} ?>

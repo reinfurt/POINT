@@ -16,6 +16,9 @@ function process_body($b)
 $body = $item["body"];
 $body = process_body($body);
 
-?><div id="main"><? echo $body; ?></div><?
+?>
+<div id="page">
+	<div id="main"><? echo $body; ?></div>
+</div><?
 }
 ?>
