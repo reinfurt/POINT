@@ -178,6 +178,7 @@ img {
 	#year {
 		font-size: 100px;
 		line-height: 100px;
+		z-index: -10;
 	}
 	
 	#main {
