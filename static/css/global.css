@@ -168,6 +168,7 @@ header {
 	
 	#ticker-display {
 		width: 100vw;
+		box-sizing: border-box;
 		left: 0px;
 	    padding: 0px 20px;
 	}
