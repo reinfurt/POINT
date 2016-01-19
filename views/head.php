@@ -30,6 +30,21 @@ $now_children = $oo->children(1);
 $is_report = false;
 if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 	$is_report = true;
+	
+use \Michelf\Markdown;
+// $md = new Markdown;
+
+require_once("open-records-generator/lib/Michelf/Markdown.inc.php");
+
+function process_md($b)
+{
+	$b = trim($b);
+	$b = \Michelf\Markdown::defaultTransform($b);
+	$b = ltrim($b, "<p>");
+	$b = rtrim($b, "</p>");
+	return $b;
+}
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +59,7 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 	</head>
 	<body>
 		<div id="page"><?
-			if(!$is_report)
+		if(!$is_report)
 			{
 			?>
 			<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
@@ -60,12 +75,10 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 				</p>
 				<div id="ticker-wrapper">
 					<div id="ticker-display"></div>
-					<div id="ticker-source" class="hidden"><?
+					<div id="ticker-source" class="hidden"><?					
 					foreach($now_children as $c)
 					{
-						echo $c['name1']." / ";
-						echo $c['deck']." / ";
-						echo $c['body']."<br><br>";
+						echo process_md($c['name1']." / ".$c['deck']." / ".$c['body']);
 					}
 					?></div>
 				</div>
