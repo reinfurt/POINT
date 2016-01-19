@@ -170,7 +170,8 @@ header {
 		width: 80%;
 	}
 	
-	#ticker-display {
+	#ticker-display,
+	#event-display {
 		width: 100vw;
 		box-sizing: border-box;
 		left: 0px;
