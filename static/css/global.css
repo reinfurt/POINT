@@ -77,9 +77,12 @@ header {
 }
 
 #ticker-display,
-#event-display {
+#event-display,
+#ticker-source {
 	color: #0000dd;
 	width: 40vw;
+	padding: 20px;
+    padding-top: 0px;
 }
 
 #ticker-display {
@@ -94,8 +97,20 @@ header {
 	z-index: 100;
 }
 
+p.now {
+	padding-left: 20px;
+}
+
 .futura-book {
 	font-family: futura-book;
+}
+
+.img-container {
+	padding: 20px 0px;
+}
+
+img {
+	width: 100%;
 }
 
 /* ids */

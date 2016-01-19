@@ -44,6 +44,17 @@ function process_md($b)
 	$b = rtrim($b, "</p>");
 	return $b;
 }
+
+function process_event($b)
+{
+	$b_arr = explode("##", $b);
+	foreach($b_arr as &$b)
+	{
+		$b = trim($b);
+		$b = \Michelf\Markdown::defaultTransform($b);
+	}
+	return $b_arr;
+}
 	
 ?>
 <!DOCTYPE html>

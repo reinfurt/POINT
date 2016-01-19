@@ -1,18 +1,38 @@
 <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
 <div id="page">
 	<header class="now">
-		<p>
+		<div>
 			<a href="<? echo $host; ?>">This website</a> is a filing 
 			cabinet for the ANNUAL REPORTS of POINT Centre for 
 			Contemporary Art, Nicosia, Cyprus since 2012. Select a year 
 			to review. . .
-		</p><?
-		if(!$uu->id)
+		</div>
+	</header><?
+		if($uu->id)
 		{
-		?><p>
+		?><div id="event-wrapper" class="now">
+			<div id="event-display"><?
+			$m_arr = $oo->media($uu->id);
+			$b_arr = process_event($item['name1']." / ".$item['body']);
+			for($i = 0; $i < count($b_arr); $i++)
+			{
+				echo $b_arr[$i];
+				if($m_arr[$i])
+				{
+				?><div class="img-container">
+					<img src="<? echo m_url($m_arr[$i]); ?>">
+				</div><?
+				}
+			}
+			?></div>
+		</div><?
+		}
+		else
+		{
+		?><p class="now">
 		Meanwhile, here is what's happening now:
 		</p>
-		<div id="ticker-wrapper">
+		<div id="ticker-wrapper" class="now">
 			<div id="ticker-display"></div>
 			<div id="ticker-source" class="hidden"><?					
 			foreach($now_children as $c)
@@ -28,14 +48,6 @@
 			tickerDelay = 40;
 			document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
 		</script><?
-		}
-		else
-		{
-		?><div id="event-wrapper">
-			<div id="event-display"><?	
-			echo process_md($item['name1']." / ".$item['deck']." / ".$item['body']);
-			?></div>
-		</div><?
 		}
 		?>
 	</header>
