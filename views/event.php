@@ -19,9 +19,13 @@
 				echo $b_arr[$i];
 				if($m_arr[$i])
 				{
-				?><div class="img-container">
-					<img src="<? echo m_url($m_arr[$i]); ?>">
-				</div><?
+				?><div class="img-container"><? 
+					$ii = $i;
+					while ($m_arr[$ii] != null) { ?>
+						<img src="<? echo m_url($m_arr[$ii]); ?>"><?
+						$ii++;
+					}
+				?></div><?
 				}
 			}
 			?></div>
