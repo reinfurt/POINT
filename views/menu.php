@@ -18,9 +18,8 @@ if($is_report)
 	onmouseover="show_reports();"
 	onmouseout="hide_reports();"
 >
-	<div 
-		class="report-container select"
-		
+	<div
+		class="report-container select"		
 		>
 		<a href="<? echo $host.$uu->urls(); ?>">
 			<img class="report-img" src="<? echo $cover_url; ?>">
@@ -45,7 +44,7 @@ if($is_report)
 else
 {
 	?><div id="reports"><?
-	for($i = 0; $i < count($reports)-1; $i++)
+	for($i = 0; $i < count($reports); $i++)
 	{
 		$report_url = $host."annual-reports/".$reports[$i]['url'];
 		$cover_url = m_url($oo->media($reports[$i]['id'])[0]);
