@@ -21,9 +21,15 @@ for($i = 0; $i < count($body_arr); $i++)
 
 ?>
 <div id="report"><?
+	$i = 0;
 	foreach($body_arr as $b)
 	{
-	?><div class="column"><? echo $b; ?></div><?
+		if($i % 2 == 0)
+		{ ?><div class="column-container"><? }
+		?><div class="column"><? echo $b; ?></div><?
+		if($i % 2 != 0)
+		{ ?></div><? }
+		$i++;
 	}
 ?></div><?
 }

@@ -3,7 +3,7 @@
 	if($uu->id)
 	{
 	?><div id="event-wrapper">
-		<div id="event-display"><?
+		<div id="event-display" class="column"><?
 		$m_arr = $oo->media($uu->id);
 		$b_arr = process_event($item['name1']." / ".$item['body']);
 		for($i = 0; $i < count($b_arr); $i++)
@@ -21,7 +21,7 @@
 			}
 		}
 		$report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
-		?><a href="<? echo $report_url; ?>">&lt; <? echo $year; ?></a>
+		?><div class="now"><a href="<? echo $report_url; ?>">&lt; go back to <? echo $year; ?></a></div>
 		</div>
 	</div><?
 	}
