@@ -1,9 +1,9 @@
 <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-<div id="page"><?
+<div id="page" class="column"><?
 	if($uu->id)
 	{
 	?><div id="event-wrapper">
-		<div id="event-display" class="column"><?
+		<div id="event-display"><?
 		$m_arr = $oo->media($uu->id);
 		$b_arr = process_event($item['name1']." / ".$item['body']);
 		for($i = 0; $i < count($b_arr); $i++)

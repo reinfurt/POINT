@@ -93,13 +93,10 @@ header {
 #ticker-display,
 #ticker-source {
 	color: #0000dd;
-	width: 25vw;
 }
 #event-display {
-	width: 25vw;
 }
 #ticker-display {
-	position: absolute;
 }
 
 /* classes */
@@ -223,10 +220,6 @@ img {
 		width: 100%;
 	}
 	#ticker-display {
-		width: 100vw;
-		box-sizing: border-box;
-		left: 0px;
-	    padding: 0px 20px;
 	}
 
 	#reports {
