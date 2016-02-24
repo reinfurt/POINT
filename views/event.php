@@ -21,7 +21,7 @@
 			}
 		}
 		$report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
-		?><div class="now"><a href="<? echo $report_url; ?>">&lt; go back to <? echo $year; ?></a></div>
+		?><div class="now"><a href="<? echo $report_url; ?>">Go back to <? echo $year; ?>. . . </a></div>
 		</div>
 	</div><?
 	}
