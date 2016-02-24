@@ -65,7 +65,17 @@ function process_event($b)
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/animate.min.css">
+		<link rel="shortcut icon" href="media/png/point.png">
 		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-year.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
-	<body>
+	<body><?
+		require_once("year.php");
+		?><header class="now column">
+			<div>
+				<a href="<? echo $host; ?>">This website</a> is a filing 
+				cabinet for the ANNUAL REPORTS of POINT Centre for 
+				Contemporary Art, Nicosia, Cyprus since 2012. Select a year 
+				to review. . .
+			</div>
+		</header>

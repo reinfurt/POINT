@@ -1,8 +1,14 @@
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
 html {
 }
 
 body { 
-	font-family: "Palatino", Helvetica, Arial, sans-serif;
+	font-family: "Optima", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 	background-color: #FFF;
@@ -68,19 +74,13 @@ a:hover > .report-img {
 
 /* header */
 header {
-	/*position: fixed;*/
-	max-width: 40vw;
-	padding: 20px;
-	/* cursor: pointer; */
-	font-size: 48px;
-	line-height: 48px;
 }
 
 #ticker-display,
 #event-display,
 #ticker-source {
 	color: #0000dd;
-	width: 40vw;
+	width: 25vw;
 	padding: 20px;
     padding-top: 0px;
 }
@@ -118,21 +118,20 @@ img {
 	/*display: none;*/
 	position: fixed;
 	top: 0px;
-	font-size: 200px;
-	line-height: 200px;
+	font-size: 5em;
+	line-height: 1.2em;
 	padding: 20px;
 	font-family: futura-book;
 	z-index: -10;
 }
 
-#main {
+.column {
 	position: relative;
-	width: 60%;
-	margin-top: 240px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 20px;
-	/* background-color: #FFF; */	
+	display: inline-block;
+	vertical-align: top;
+	width: 25vw;
+	padding: 20px;
+	padding-bottom: 17px;	
 	z-index: 100;
 }
 .hidden {
@@ -142,9 +141,6 @@ img {
 
 .invisible {
 	visibility: hidden;
-}
-#dot {
-	color: red;
 }
 
 /* animations */
@@ -177,9 +173,8 @@ img {
 	}
 	
 	#year {
-		font-size: 100px;
-		line-height: 100px;
-		z-index: -10;
+		position: relative;
+		text-align: center;
 	}
 	
 	#main {
@@ -199,5 +194,11 @@ img {
 		position: static;
 		bottom: 0px;
 		right: 0px;
+	}
+	
+	.column {
+		width: 100vw;
+		padding-bottom: 0px;
+		padding-top: 0px;
 	}
 }

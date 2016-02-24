@@ -1,13 +1,5 @@
 <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-<div id="page">
-	<header class="now">
-		<div>
-			<a href="<? echo $host; ?>">This website</a> is a filing 
-			cabinet for the ANNUAL REPORTS of POINT Centre for 
-			Contemporary Art, Nicosia, Cyprus since 2012. Select a year 
-			to review. . .
-		</div>
-	</header><?
+<div id="page"><?
 		if($uu->id)
 		{
 		?><div id="event-wrapper" class="now">

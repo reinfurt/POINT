@@ -14,11 +14,17 @@ function process_body($b)
 	return $b;
 }
 $body = $item["body"];
-$body = process_body($body);
+$body_arr = explode("++", $body);
+for($i = 0; $i < count($body_arr); $i++)
+	$body_arr[$i] = process_body($body_arr[$i]);
+
 
 ?>
-<div id="page">
-	<div id="main"><? echo $body; ?></div>
-</div><?
+<div id="report"><?
+	foreach($body_arr as $b)
+	{
+	?><div class="column"><? echo $b; ?></div><?
+	}
+?></div><?
 }
 ?>
