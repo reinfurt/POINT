@@ -202,8 +202,15 @@ img {
 		width: 80%;
 	}
 	
-	#ticker-display,
+	#page {
+		position: relative;
+		padding-top:0px;
+	}
+	
 	#event-display {
+		width: 100%;
+	}
+	#ticker-display {
 		width: 100vw;
 		box-sizing: border-box;
 		left: 0px;
