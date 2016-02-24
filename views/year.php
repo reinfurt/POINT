@@ -1,5 +1,5 @@
 <?
-$year = $uu->url;
+$year = $uu->urls[1];
 if(intval($year))
 	$year = intval($year);
 else

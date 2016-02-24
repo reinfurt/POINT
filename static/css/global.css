@@ -7,10 +7,11 @@
 html {
 }
 
-body { 
+body,
+#page { 
 	font-family: "Optima", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 15px;
+	line-height: 17px;
 	background-color: #FFF;
 	margin: 0px;
 }
@@ -22,20 +23,17 @@ a.img-container:hover + .caption {
 
 /* link styles */
 a:link,
-a:visited, 
-#year-select {
+a:visited {
 	text-decoration: none;
-	color: #F30;
+	color: #0000dd;
 }
-a.r:hover {
-	color: #FB3139;
+
+.now a:link,
+.now a:visited,
+#year-select {
+	color: #f30;
 }
-a.b:hover {
-	color: #5386F0;
-}
-a.y:hover {
-	color: #FED71B;
-}
+
 a:active {
 }
 
@@ -63,6 +61,13 @@ p {
 	overflow: auto;
 }
 
+#page {
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 20px;
+}
+
 .report-container {
 	display: inline-block;
 	float: right;
@@ -87,14 +92,13 @@ header {
 }
 
 #ticker-display,
-#event-display,
 #ticker-source {
 	color: #0000dd;
 	width: 25vw;
-	padding: 20px;
-    padding-top: 0px;
 }
-
+#event-display {
+	width: 25vw;
+}
 #ticker-display {
 	position: absolute;
 }
@@ -102,8 +106,6 @@ header {
 /* classes */
 .now {
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 15px;
-	line-height: 17px;
 	z-index: 100;
 }
 
@@ -121,6 +123,10 @@ p.now {
 
 img {
 	width: 100%;
+}
+
+.hund {
+	padding-left: 7px;
 }
 
 /* ids */
@@ -180,6 +186,7 @@ img {
 	header {
 		position: static;
 		max-width: 100vw;
+		margin-top: 8em;
 	}
 	
 	header.column {
@@ -187,7 +194,6 @@ img {
 	}
 	
 	#year {
-		position: relative;
 		text-align: center;
 	}
 	
