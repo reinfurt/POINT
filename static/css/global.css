@@ -22,7 +22,8 @@ a.img-container:hover + .caption {
 
 /* link styles */
 a:link,
-a:visited {
+a:visited, 
+#year-select {
 	text-decoration: none;
 	color: #F30;
 }
@@ -40,6 +41,15 @@ a:active {
 
 p {
 	margin-top: 0px;
+}
+
+#year-select {
+	padding-top: 17px;
+	cursor: pointer;
+}
+
+#years {
+	display: none;
 }
 
 #reports {
@@ -170,6 +180,10 @@ img {
 	header {
 		position: static;
 		max-width: 100vw;
+	}
+	
+	header.column {
+		padding-bottom: 17px;
 	}
 	
 	#year {
