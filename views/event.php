@@ -1,11 +1,12 @@
 <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-<div id="page" class="column">
-	<div>
-		<a href="<? echo $js_back; ?>"><img id="close" src="<? echo $media_path; ?>svg/ex.svg"></a>
-	</div><?
+<div id="page" class="column"><?
 	if($uu->id)
 	{
-	?><div id="event-wrapper">
+	?>
+	<div>
+		<a href="<? echo $js_back; ?>"><img id="close" src="<? echo $media_path; ?>svg/ex.svg"></a>
+	</div>
+	<div id="event-wrapper">
 		<div id="event-display"><?
 		$m_arr = $oo->media($uu->id);
 		$b_arr = process_event($item['name1']." / ".$item['body']);
