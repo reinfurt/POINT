@@ -1,8 +1,8 @@
 <?
 if($uu->id)
 {
-?><div>
-	<a href="<? echo $js_back; ?>"><img id="close" src="<? echo $media_path; ?>svg/ex.svg"></a>
+?><div id="close">
+	<a href="<? echo $js_back; ?>"><img src="<? echo $media_path; ?>svg/ex.svg"></a>
 </div><?
 }	
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>

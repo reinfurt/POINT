@@ -147,7 +147,7 @@ img {
 	width: 25vw;
 	padding: 20px;
 	padding-bottom: 17px;	
-	z-index: 100;
+	z-index: 5;
 }
 .hidden {
 	visibility: hidden;
@@ -186,6 +186,7 @@ img {
     position: absolute;
     right: .5em;
     top: .5em;
+    z-index: 10;
 }
 
 /* mobile */
