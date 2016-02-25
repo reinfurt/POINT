@@ -1,5 +1,8 @@
 <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-<div id="page" class="column"><?
+<div id="page" class="column">
+	<div>
+		<a href="<? echo $js_back; ?>"><img id="close" src="<? echo $media_path; ?>svg/ex.svg"></a>
+	</div><?
 	if($uu->id)
 	{
 	?><div id="event-wrapper">

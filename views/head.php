@@ -55,6 +55,8 @@ function process_event($b)
 	}
 	return $b_arr;
 }
+
+$js_back = "javascript:history.back();";
 	
 ?>
 <!DOCTYPE html>

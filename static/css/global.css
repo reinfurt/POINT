@@ -180,6 +180,14 @@ img {
 	transform: translateX(-50%);
 }
 
+#close {
+	height: 1.5em;
+    width: 1.5em;
+    position: absolute;
+    right: .5em;
+    top: .5em;
+}
+
 /* mobile */
 @media screen and (max-width: 800px) {
 	.column-container {
