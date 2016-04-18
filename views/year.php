@@ -1,5 +1,5 @@
 <?
-$use_imgs = false;
+$use_imgs = true;
 
 if($use_imgs)
 {
@@ -11,6 +11,7 @@ if($use_imgs)
 	$urls = array();
 	foreach($y_arr as $d)
 		$urls[] = $media_path."png/$d.png";
+		$urlpoint = $media_path."png/point.png";
 ?><div id="year" class="h-centre"><?
 	foreach($urls as $u)
 	{
@@ -19,6 +20,7 @@ if($use_imgs)
 		<img src="<? echo $u; ?>">
 	</div><?
 	}
+	?><span id="dot" class="blink"><img src="<? echo $urlpoint; ?>"></span><?
 ?></div><?
 }
 else

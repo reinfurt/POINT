@@ -34,8 +34,8 @@ if($uu->id)
 	}
 	else
 	{
-	?><div>
-		<p>Meanwhile, here is what's happening now:</p>
+	?><div class="now">
+		<p>Meanwhile, here is what’s happening now:</p>
 		<div id="ticker-wrapper">
 			<div id="ticker-display"></div>
 			<div id="ticker-source" class="hidden"><?					

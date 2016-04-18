@@ -49,6 +49,21 @@ p {
 	display: none;
 }
 
+#a-z-select {
+	position: fixed;
+	padding-top: 17px;
+	cursor: pointer;
+	left: 20px;
+	bottom: 20px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#a-z {
+	display: none;
+	position: absolute;
+	left: 20px;
+}
+
 #reports {
 	/*position: fixed;*/
     bottom: 0px;
@@ -95,7 +110,7 @@ header {
 }
 #event-display {
 }
-#ticker-display {
+#ticker-display { 
 }
 
 /* classes */
@@ -106,6 +121,10 @@ header {
 
 p.now {
 	padding-left: 20px;
+}
+
+.times { 
+ 	font-family: Times, "Times New Roman", serif;
 }
 
 .futura-book {
@@ -131,7 +150,7 @@ img {
 	top: 0px;
 	font-size: 5em;
 	line-height: 1.2em;
-	padding: 20px;
+	padding: 30px;
 	font-family: futura-book;
 	z-index: -10;
 }
@@ -183,7 +202,7 @@ img {
 #close {
 	height: 1.5em;
     width: 1.5em;
-    position: absolute;
+    position: fixed;
     right: .5em;
     top: .5em;
     z-index: 10;
@@ -196,7 +215,14 @@ img {
 }
 
 .digit-container {
-    height: 50px;
+    height: 66px;
+    display: inline-block;
+}
+
+#dot img {
+    height: 12px;
+    width: 12px;
+	margin-left: 14px;
     display: inline-block;
 }
 
