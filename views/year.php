@@ -1,10 +1,33 @@
 <?
-$year = $uu->urls[1];
-if(intval($year))
-	$year = intval($year);
-else
-	$year = "null";
+$use_imgs = false;
 
+if($use_imgs)
+{
+	$year = $uu->urls[1];
+	if(!intval($year))
+		$year = "2016";
+	$y_arr = str_split($year);
+	
+	$urls = array();
+	foreach($y_arr as $d)
+		$urls[] = $media_path."png/$d.png";
+?><div id="year" class="h-centre"><?
+	foreach($urls as $u)
+	{
+	?>
+	<div class="digit-container">
+		<img src="<? echo $u; ?>">
+	</div><?
+	}
+?></div><?
+}
+else
+{
+	$year = $uu->urls[1];
+	if(intval($year))
+		$year = intval($year);
+	else
+		$year = "null";
 ?><div id="year" class="h-centre"><?
 	?><span class="thou"></span><?
 	?><span class="hund"></span><?
@@ -25,4 +48,6 @@ else
 			init_year('year', <? echo $year; ?>);
 		}
 	});
-</script>
+</script><?
+}
+?>
