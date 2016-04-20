@@ -139,6 +139,10 @@ img {
 	width: 100%;
 }
 
+#img-display {
+    width: 75vw;
+    padding: 20px;
+}
 .hund {
 	padding-left: 7px;
 }
