@@ -7,3 +7,6 @@ config.php
 
 # backup files
 *~
+
+# large media -- keep as a backup for now
+media-large/
