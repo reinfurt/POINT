@@ -1,4 +1,6 @@
 <?
+// via
+// http://stackoverflow.com/questions/20744995/how-to-sort-an-array-with-php-ignoring-the-articles-a-an-the-in-the-beginni
 
 function handleArticles($str)
 {
