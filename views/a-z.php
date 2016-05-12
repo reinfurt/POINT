@@ -1,4 +1,30 @@
-<div class="now">
+<?
+
+function handleArticles($str)
+{
+    // ignore non-alphanumerics
+    $str = preg_replace("/[^A-Za-z0-9 ]/", '', $str);
+    
+    // the extra space is to prevent "undefined offset" notices
+    // on single-word titles
+    list($first, $rest) = explode(" ",$str." ",2);
+
+    $validarticles = array("a","an","the");
+    
+    
+    if (in_array(strtolower($first), $validarticles)) 
+        return $rest.", ".$first;
+    
+    return $str;
+}
+
+function sort_sans_articles($a, $b)
+{
+    return strnatcasecmp(handleArticles($a),handleArticles($b));
+}
+
+
+?><div class="now">
     <div id="a-z-select">A–Z</div>
 </div>
     
@@ -21,15 +47,16 @@
                 objects.active = 1
                 AND wires.active = 1
                 AND wires.toid = objects.id
-                AND $rsql
-            ORDER BY
-                objects.name1";
+                AND $rsql";
     $res = $db->query($sql);
     $reports = array();
     while($obj = $res->fetch_assoc())
         $reports[] = $obj;
     $res->close(); 
     $report_id = 6;
+    
+    $names = array();
+    $urls = array();
     // $u = "annual-reports/".$oo->get($report_id)['url'];
     // $reports = $oo->children($report_id);
     foreach($reports as $r)
@@ -37,7 +64,15 @@
         // this is extremely inefficient -- how to make it better?
         $u = "annual-reports/".$oo->get($r['fromid'])['url'];
         $url = $host.$u."/".$r['url'];
-        ?><div><a href="<? echo $url; ?>"><? echo $r['name1']; ?></a></div><?
+        $names[$r['id']] = $r['name1'];
+        $urls[$r['id']] = $url
+        ?><!-- div><a href="<? echo $url; ?>"><? echo $r['name1']; ?></a></div --><?
+    }
+    uasort($names, 'sort_sans_articles');
+    
+    foreach($names as $id => $name)
+    {
+        ?><div><a href="<? echo $urls[$id]; ?>"><? echo $name; ?></a></div><?
     }
     ?></div>
     <script>

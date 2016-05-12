@@ -12,10 +12,12 @@ if ($uu->id)
 {
     $m_arr = $oo->media($uu->id);
     $media_urls = [];
+    $media_captions = [];
     if ($m_arr[0])
     {
     ?><div id="img-display">
         <img id="img-gallery" src="">
+        <div id="img-caption"><div>
     </div><?
     }
 }
@@ -39,6 +41,8 @@ if ($uu->id)
                 { 
                     $m_url = m_url($m_arr[$ii]);
                     $media_urls[] = $m_url;
+                    $media_captions[] = $m_arr[$ii]['caption'];
+                    
                     ?><div class="image" onclick="launch(<? echo $ii; ?>)">
                         <img src="<? echo $m_url; ?>">
                     </div><?
@@ -80,6 +84,7 @@ if ($uu->id)
 </div>
 <script>
     var images = <? echo json_encode($media_urls); ?>;
+    var captions = <? echo json_encode($media_captions); ?>;
     var gallery_id = "img-display";
     var gallery_img = "img-gallery"
     var index = 0;
