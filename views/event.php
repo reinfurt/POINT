@@ -6,24 +6,28 @@ if($uu->id)
 </div><?
 }   
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
+<script src="<? echo $host; ?>static/js/gallery.js"></script>
 <?
 if ($uu->id)
 {
     $m_arr = $oo->media($uu->id);
+    $media_urls = [];
     if ($m_arr[0])
     {
     ?><div id="img-display">
-        <img src="<? echo m_url($m_arr[0]); ?>">
+        <img id="img-gallery" src="">
     </div><?
     }
 }
-?><div id="page" class="column"><?
+?><?
     if($uu->id)
     {
-    ?><div id="event-wrapper">
-        <div id="event-display"><?
-       
-        $b_arr = process_event($item['name1']." / ".$item['body']);
+    ?>
+    <div id="page" class="column">
+    <div id="event-wrapper">
+        <div id="event-display">
+            <header><? echo $item['name1']; ?></header><?
+        $b_arr = process_event($item['body']);
         for($i = 0; $i < count($b_arr); $i++)
         {
             echo $b_arr[$i];
@@ -31,8 +35,13 @@ if ($uu->id)
             {
             ?><div class="img-container"><? 
                 $ii = $i;
-                while ($m_arr[$ii] != null) { ?>
-                    <img src="<? echo m_url($m_arr[$ii]); ?>"><?
+                while ($m_arr[$ii] != null) 
+                { 
+                    $m_url = m_url($m_arr[$ii]);
+                    $media_urls[] = $m_url;
+                    ?><div class="image" onclick="launch(<? echo $ii; ?>)">
+                        <img src="<? echo $m_url; ?>">
+                    </div><?
                     $ii++;
                 }
             ?></div><?
@@ -43,11 +52,12 @@ if ($uu->id)
                 <a href="<? echo $report_url; ?>">Go back to <? echo $year; ?>. . . </a>
             </div>
         </div>
+    </div>
     </div><?
     }
     else
     {
-    ?><div class="now">
+    ?><div class="now column">
         <p>Meanwhile, here is what’s happening now:</p>
         <div id="ticker-wrapper">
             <div id="ticker-display"></div>
@@ -58,7 +68,6 @@ if ($uu->id)
             }
             ?></div>
         </div>
-    </div>
     <script type="text/javascript">
         //var animate = !(checkCookie("animateCookie"));
         //setCookie("animateCookie");
@@ -69,3 +78,13 @@ if ($uu->id)
     }
     ?>
 </div>
+<script>
+    var images = <? echo json_encode($media_urls); ?>;
+    var gallery_id = "img-display";
+    var gallery_img = "img-gallery"
+    var index = 0;
+    var inGallery = false;
+    var attached = false;
+    var gallery = document.getElementById(gallery_id);
+</script>
+    
