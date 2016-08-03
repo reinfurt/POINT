@@ -11,6 +11,6 @@ else
 require_once("views/head.php");
 require_once("views/".$view.".php");
 require_once("views/menu.php");
-require_once("views/a-z.php");
+// require_once("views/a-z.php");
 require_once("views/foot.php");
 ?>
