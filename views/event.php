@@ -15,9 +15,37 @@ if ($uu->id)
     $media_captions = [];
     if ($m_arr[0])
     {
-    ?><div id="img-display">
-        <img id="img-gallery" src="">
-        <div id="img-caption"><div>
+    ?><div id="img-display"><?
+        $b_arr = process_event($item['body']);
+        for($i = 0; $i < count($b_arr); $i++)
+        {
+            if($m_arr[$i])
+            {
+            ?><div class="img-container"><? 
+                $ii = $i;
+                while ($m_arr[$ii] != null) 
+                { 
+                    $m_url = m_url($m_arr[$ii]);
+                    $media_urls[] = $m_url;
+                    $media_captions[] = $m_arr[$ii]['caption'];
+                    
+                    // insert random sizing here
+
+                    $padding = rand(0, 10);
+                    $margin = rand(0, 20);
+                    $width = rand(2, 5)*10;
+                    $float = (rand(0, 1) == 0) ? 'left' : 'right';
+                    $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
+                    ?><div class="image" onclick="launch(<? echo $ii; ?>)" style="<? echo $style; ?>">
+                        <img src="<? echo $m_url; ?>">
+                    </div><?
+                    $ii++;
+                }
+            ?></div><?
+            }
+        }
+        ?><img id="img-gallery" src="">
+        <div id="img-caption"></div>
     </div><?
     }
 }
@@ -31,27 +59,8 @@ if ($uu->id)
             <header><? echo $item['name1']; ?></header><?
         $b_arr = process_event($item['body']);
         for($i = 0; $i < count($b_arr); $i++)
-        {
-            echo $b_arr[$i];
-            if($m_arr[$i])
-            {
-            ?><div class="img-container"><? 
-                $ii = $i;
-                while ($m_arr[$ii] != null) 
-                { 
-                    $m_url = m_url($m_arr[$ii]);
-                    $media_urls[] = $m_url;
-                    $media_captions[] = $m_arr[$ii]['caption'];
-                    
-                    ?><div class="image" onclick="launch(<? echo $ii; ?>)">
-                        <img src="<? echo $m_url; ?>">
-                    </div><?
-                    $ii++;
-                }
-            ?></div><?
-            }
-        }
-        $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
+            echo $b_arr[$i] . "<br />";
+            $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
             ?><div class="now">
                 <a href="<? echo $report_url; ?>">Go back to <? echo $year; ?>. . . </a>
             </div>

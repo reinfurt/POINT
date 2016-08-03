@@ -79,6 +79,8 @@ p {
 	position: absolute;
     right: 0px;
     top: 0px;
+    float:right;
+    display:block;
 }
 
 .report-container {
@@ -141,6 +143,15 @@ p.now {
 
 img {
 	width: 100%;
+}
+
+#img-gallery {
+    position: fixed;
+    top: 0px;    
+    left: 0px;
+    width: 100%;
+    padding: 20px;
+    z-index: 100;
 }
 
 #img-display {
