@@ -30,6 +30,10 @@ $now_children = $oo->children(1);
 $is_report = false;
 if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 	$is_report = true;
+
+$is_event = false;
+if($uu->urls[0] == "annual-reports" && count($uu->urls) == 3)
+	$is_event = true;
 	
 use \Michelf\Markdown;
 // $md = new Markdown;
@@ -73,6 +77,7 @@ $js_back = "javascript:history.back();";
 	</head>
 	<body><?
 		require_once("year.php");
+        if ($is_event != "true") { 
 		?><header class="now column">
 			<div>
 				<a href="<? echo $host; ?>">This website</a> is a filing 
@@ -91,7 +96,7 @@ $js_back = "javascript:history.back();";
 				$url = $host.$u."/".$r['url'];
 				?><div><a href="<? echo $url; ?>"><? echo $r['name1']; ?></a></div><?
 			}
-			?></div>
+		    ?></div>
 			<script>
 				year_select = document.getElementById("year-select");
 				year_select.onclick = 
@@ -103,5 +108,6 @@ $js_back = "javascript:history.back();";
 						else
 							years.style.display = "block";
 					};
-			</script>
+			</script><?
+            } ?>
 		</header>

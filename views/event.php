@@ -13,9 +13,10 @@ if ($uu->id)
     $m_arr = $oo->media($uu->id);
     $media_urls = [];
     $media_captions = [];
+    $media_dims = [];
     if ($m_arr[0])
     {
-    ?><div id="img-display"><?
+    ?><div id="img-pinboard"><?
         $b_arr = process_event($item['body']);
         for($i = 0; $i < count($b_arr); $i++)
         {
@@ -23,12 +24,20 @@ if ($uu->id)
             {
             ?><div class="img-container"><? 
                 $ii = $i;
+                // rewrite as for each to match modernart.local/views/artist.php
+                // so that then can get to the 'url' etc
                 while ($m_arr[$ii] != null) 
                 { 
                     $m_url = m_url($m_arr[$ii]);
                     $media_urls[] = $m_url;
                     $media_captions[] = $m_arr[$ii]['caption'];
-                    
+                    // fix relative urls
+                    // $relative_url = "media/" . m_pad($m_arr['id']).".".$m_arr['type'];
+                    // $size = getimagesize($relative_url);
+                    // $size = getimagesize($m_url);
+                    $wide_tall = (($size[0] >= $size[1]) ? wide : tall);
+                    $media_dims[] = $wide_tall;
+
                     // insert random sizing here
 
                     $padding = rand(0, 10);
@@ -36,6 +45,7 @@ if ($uu->id)
                     $width = rand(2, 5)*10;
                     $float = (rand(0, 1) == 0) ? 'left' : 'right';
                     $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
+                    // add $wide_tall to class
                     ?><div class="image" onclick="launch(<? echo $ii; ?>)" style="<? echo $style; ?>">
                         <img src="<? echo $m_url; ?>">
                     </div><?
@@ -44,8 +54,10 @@ if ($uu->id)
             ?></div><?
             }
         }
-        ?><img id="img-gallery" src="">
-        <div id="img-caption"></div>
+        ?><div id="img-display">
+            <img id="img-gallery" src="">
+            <div id="img-caption"></div>
+        </div>
     </div><?
     }
 }
