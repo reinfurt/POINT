@@ -69,7 +69,7 @@ $js_back = "javascript:history.back();";
 		<title><? echo $title; ?></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="<? echo $host; ?>static/css/global.css">
+		<link rel="stylesheet" href="<? echo $host; ?>static/css/main.css">
 		<link rel="stylesheet" href="<? echo $host; ?>static/css/animate.min.css">
 		<link rel="shortcut icon" href="<? echo $host; ?>media/png/point.png">
 		<script type="text/javascript" src="<? echo $host; ?>static/js/animate-year.js"></script>

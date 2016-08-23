@@ -1,116 +1,66 @@
 <?
-if($uu->id)
-{
-?><div id="close">
-    <a href="<? echo $js_back; ?>"><img src="<? echo $media_path; ?>svg/ex.svg"></a>
-</div><?
-}   
-?><script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
-<script src="<? echo $host; ?>static/js/gallery.js"></script>
-<?
-if ($uu->id)
-{
-    $m_arr = $oo->media($uu->id);
-    $media_urls = [];
-    $media_captions = [];
-    $media_dims = [];
-    if ($m_arr[0])
-    {
-    ?><div id="img-pinboard"><?
-        $b_arr = process_event($item['body']);
-        for($i = 0; $i < count($b_arr); $i++)
-        {
-            if($m_arr[$i])
-            {
-            ?><div class="img-container"><? 
-                $ii = $i;
-                // rewrite as for each to match modernart.local/views/artist.php
-                // so that then can get to the 'url' etc
-                while ($m_arr[$ii] != null) 
-                { 
-                    $m_url = m_url($m_arr[$ii]);
-                    $media_urls[] = $m_url;
-                    $media_captions[] = $m_arr[$ii]['caption'];
-                    // fix relative urls
-                    // $relative_url = "media/" . m_pad($m_arr['id']).".".$m_arr['type'];
-                    // $size = getimagesize($relative_url);
-                    // $size = getimagesize($m_url);
-                    $wide_tall = (($size[0] >= $size[1]) ? wide : tall);
-                    $media_dims[] = $wide_tall;
-
-                    // insert random sizing here
-
-                    $padding = rand(0, 10);
-                    $margin = rand(0, 20);
-                    $width = rand(2, 5)*10;
-                    $float = (rand(0, 1) == 0) ? 'left' : 'right';
-                    $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
-                    // add $wide_tall to class
-                    ?><div class="image" onclick="launch(<? echo $ii; ?>)" style="<? echo $style; ?>">
-                        <img src="<? echo $m_url; ?>">
-                    </div><?
-                    $ii++;
-                }
-            ?></div><?
-            }
-        }
-        ?><div id="img-display">
-            <img id="img-gallery" src="">
-            <div id="img-caption"></div>
-        </div>
-    </div><?
-    }
-}
-?><?
-    if($uu->id)
-    {
-    ?>
-    <div id="page" class="column">
-    <div id="event-wrapper">
-        <div id="event-display">
-            <header><? echo $item['name1']; ?></header><?
-        $b_arr = process_event($item['body']);
-        for($i = 0; $i < count($b_arr); $i++)
-            echo $b_arr[$i] . "<br />";
-            $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
-            ?><div class="now">
-                <a href="<? echo $report_url; ?>">Go back to <? echo $year; ?>. . . </a>
+// collect media and captions
+$media = $oo->media($uu->id);
+$media_urls = array();
+$media_captions = array();
+$media_dims = array();
+?>
+<section id="artist-detail">
+	<header id="artist-name"><? echo nl2br(trim($item['name1'])); ?></header>
+	<figure><?
+	$i = 0;
+	foreach($media as $m)
+	{
+		$url = m_url($m);
+		$caption = $m['caption'];
+		$media_urls[] = $url;
+		$media_captions[] = $caption;
+        $relative_url = "media/" . m_pad($m['id']).".".$m['type'];
+        $size = getimagesize($relative_url);
+        $wide_tall = (($size[0] >= $size[1]) ? wide : tall);
+        $media_dims[] = $wide_tall;
+	?>
+	<div class="thumb">
+		<div class="img-container">
+            <div class="square">
+                <div class="controls next white">></div>
+                <div class="controls prev white"><</div>
+                <div class="controls close white">x</div>
+                <!-- <p id="orientation" class="controls centered white">Rotate device to determine orientation</p> -->
             </div>
-        </div>
-    </div>
-    </div><?
-    }
-    else
-    {
-    ?><div class="now column">
-        <p>Meanwhile, here is what’s happening now:</p>
-        <div id="ticker-wrapper">
-            <div id="ticker-display"></div>
-            <div id="ticker-source" class="hidden"><?                   
-            foreach($now_children as $c)
-            {
-                echo process_md($c['name1']." / ".$c['deck']." / ".$c['body']);
-            }
-            ?></div>
-        </div>
-    <script type="text/javascript">
-        //var animate = !(checkCookie("animateCookie"));
-        //setCookie("animateCookie");
-        animate = true;
-        tickerDelay = 40;
-        document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
-    </script><?
-    }
-    ?>
-</div>
+            <img src="<? echo $url; ?>" class="centered <? echo $wide_tall; ?>">
+		</div>
+		<div class="caption">> <? echo $caption; ?></div>
+	</div><?
+	}
+	?></figure><?
+
+$body = $item['body'];
+$cv = $oo->children($uu->id)[0];
+
+if($cv)
+{
+    $url = implode("/", $uu->urls);
+    $url = "/".$url."/".$cv['url'];
+    ?><a href="<? echo $url; ?>"><? echo $cv['name1']; ?></a><?
+/*
+	$cbody = $cv['body'];
+	$cbody = trim($cbody);
+	$cbody = strip_tags($cbody, "<i><b><a>");
+	$cbody = nl2br($cbody);
+	echo "— <br /><br/>"; // can this be done in css?
+	echo $cbody;
+*/
+}
+else
+{
+	echo nl2br($body);
+}
+?></section>
+<!-- <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script> -->
+<script type="text/javascript" src="<? echo $host; ?>static/js/screenfull.js"></script>
+<script type="text/javascript" src="<? echo $host; ?>static/js/gallery.js"></script>
 <script>
     var images = <? echo json_encode($media_urls); ?>;
-    var captions = <? echo json_encode($media_captions); ?>;
-    var gallery_id = "img-display";
-    var gallery_img = "img-gallery"
-    var index = 0;
-    var inGallery = false;
-    var attached = false;
-    var gallery = document.getElementById(gallery_id);
+    var dimensions = <? echo json_encode($media_dims); ?>;
 </script>
-    
