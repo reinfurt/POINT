@@ -5,12 +5,11 @@ $media_urls = array();
 $media_captions = array();
 $media_dims = array();
 ?>
-<section id="artist-detail">
+<section id="">
 	<header id="artist-name"><? echo nl2br(trim($item['name1'])); ?></header>
 	<figure><?
 	$i = 0;
-	foreach($media as $m)
-	{
+	foreach($media as $m) {
 		$url = m_url($m);
 		$caption = $m['caption'];
 		$media_urls[] = $url;
@@ -21,16 +20,17 @@ $media_dims = array();
         $media_dims[] = $wide_tall;
 	?>
 	<div class="thumb">
-		<div class="img-container">
-            <div class="square">
+		<div class="img-container dev">
+            <div class="square dev">
                 <div class="controls next white">></div>
                 <div class="controls prev white"><</div>
                 <div class="controls close white">x</div>
                 <!-- <p id="orientation" class="controls centered white">Rotate device to determine orientation</p> -->
             </div>
-            <img src="<? echo $url; ?>" class="centered <? echo $wide_tall; ?>">
+            <!-- <img src="<? echo $url; ?>" class="centered <? echo $wide_tall; ?>"> -->
+            <img src="<? echo $url; ?>" class="<? echo $wide_tall; ?>">
 		</div>
-		<div class="caption">> <? echo $caption; ?></div>
+		<div class="caption">>>> <? echo $caption; ?></div>
 	</div><?
 	}
 	?></figure><?

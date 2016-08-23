@@ -3,6 +3,7 @@
   pinboard (varied sizes -- km)
   ** or maybe just big images one after the other with no date or www nav so 
   only choice is to X close the "window" **
+- fix .centered
 - replace X with a go back arrow or just remove X
 - image gallery
     + fix $wide_tall to use relative urls (see /modernart.local/views/artist.php)
