@@ -1,108 +1,163 @@
+// requires screenfull.js
+//
+// css
+//  .thumb
+//      .img-container
+//      .square
+//          .controls
+//      .img centered [wide][tall]
+//      .caption
 
-// open the image gallery, starting at image i
-function launch(i) {
-	show(gallery_id);
-	setsrc(gallery_img, images[i]);
-	index = i; // store current image index
-	
-	if(!attached)
-	{
-		// document.addEventListener("click", gallery_listener);
-	}
-	// this is such a cheat
-	// the setting of inGallery needs to happen *after* the 
-	// above eventListner is added to the document. URGH
-	// setTimeout(function(){gallery_listener_set();}, 1000);
-	inGallery = true;
+var thumbs = [];
+var imgs = [];
+var index;
+var o_src;
+var gallery;
+var fullscreen;
+var fullwindow;
+var debug;
+
+// desktop or mobile
+
+if (screenfull.enabled && !fullwindow) 
+    fullscreen = true;
+else 
+    fullwindow = true;
+
+// assign handlers    
+
+var thumbs = document.getElementsByClassName('thumb');
+
+for (var i = 0; i < thumbs.length; i++) {
+    ( function () {
+        // ( closure ) -- retains state of local variables
+        var imgcontainer = thumbs[i].children[0];
+        var caption = thumbs[i].children[1];
+        var img = imgcontainer.children[1];          
+        var controlsnext = imgcontainer.children[0].children[0];
+        var controlsprev = imgcontainer.children[0].children[1];
+        var controlsclose = imgcontainer.children[0].children[2];
+        var j = i;
+
+        caption.addEventListener('click', function() {
+            index = j;
+            gallery = img;
+            var thisimgcontainer = this.previousElementSibling;
+            thisimgcontainer.style.display="block";
+            this.style.display="none"; 
+            if (fullscreen) {
+                screenfull.request(thisimgcontainer);
+            } else { 
+                imgcontainer.className = "img-container-fullwindow";
+                readdeviceorientation();
+            }
+        });
+        controlsnext.addEventListener('click', next); 
+        controlsprev.addEventListener('click', prev); 
+        controlsclose.addEventListener('click', function() {                
+            var thisimgcontainer = this.parentElement.parentElement; 
+            var thiscaption = thisimgcontainer.nextElementSibling; 
+            thisimgcontainer.style.display="none";
+            thiscaption.style.display="block";
+            if (fullscreen)
+                screenfull.exit();
+            debuglog();
+        });
+        imgs.push(img);
+    }());
 }
 
-function gallery_listener_set() {
-	inGallery = true;
+// navigation 
+
+function next() {
+    index++;
+    if (index >= imgs.length)
+        index = 0;
+    gallery.src = imgs[index].src;
+    gallery.className = imgs[index].className;
+    debuglog();
 }
 
 function prev() {
-	if(index == 0)
-		index = images.length;
-	index--;
-	setsrc(gallery_img, images[index]);
+    index--;
+    if (index < 0)
+        index = imgs.length - 1;
+    gallery.src = imgs[index].src;
+    gallery.className = imgs[index].className;
+    debuglog();
 }
 
-function next() {
-	if(index == images.length-1)
-		index = -1;
-	index++;
-	setsrc(gallery_img, images[index]);
-}
-
-function close_gallery() {
-	inGallery = false;
-	hide(gallery_id);
-	if(attached)
-	{
-		// document.removeEventListener("click", gallery_listener);
-	}
-	attached = false;
-}
-
-// use arrow keys for navigation within the gallery
 document.onkeydown = function(e) {
-	if(inGallery) {
-		e = e || window.event;
-		switch(e.which || e.keyCode) {
-			case 37: // left
-				prev();
-			break;
-			case 39: // right
-				next();
-			break;
-			case 27: // esc
-				close_gallery();
-			break;
-			default: return; // exit this handler for other keys
-		}
-		e.preventDefault();
-	}
+    if(screenfull.isFullscreen || fullwindow) {
+        e = e || window.event;
+        switch(e.which || e.keyCode) {
+            case 37: // left
+                prev();
+                break;
+            case 39: // right
+                next();
+                break;
+            case 27: // esc
+                var thisimgcontainer = gallery.parentElement;
+                var thiscaption = thisimgcontainer.nextElementSibling;
+                thisimgcontainer.style.display="none";
+                thiscaption.style.display="block";   
+                debuglog();
+                break;
+            default: return; // exit this handler for other keys
+        }
+        e.preventDefault();
+     }
 }
 
-function setbg(id, url) {
-	// get element
-	el = document.getElementById(id);
-	
-	// build bg style
-	bi = "url('/".concat(url).concat("')");
-	el.style.backgroundImage = bi;
+if (screenfull.enabled) {
+    document.addEventListener(screenfull.raw.fullscreenchange, function() {
+        if (!screenfull.isFullscreen) {
+            resetthumbnail();
+        }
+    });
 }
 
-function setsrc(id, url) {
-	// get element
-	el = document.getElementById(id);
-	el.src = url;
+// iOS device orientation
+
+function readdeviceorientation() {
+    var thisimgcontainer = gallery.parentElement;
+    if (Math.abs(window.orientation) === 90) {
+        thisimgcontainer.style.display="block";
+        document.getElementById("orientation").innerHTML = "LANDSCAPE";
+    } else {
+        thisimgcontainer.style.display="none";
+        document.getElementById("orientation").innerHTML = "PORTRAIT";
+    }
 }
 
-function hide(id)
-{
-	el = document.getElementById(id);
-	el.classList.remove("visible");
-	el.classList.add("hidden");
+window.onorientationchange = readdeviceorientation;
+
+// utility
+
+function resetthumbnail() {
+    imgcontainers = document.getElementsByClassName('img-container');
+    for (var i = imgcontainers.length-1; i >= 0; i--)
+        imgcontainers[i].style.display="none";
+
+    captions = document.getElementsByClassName('caption');
+    for (var i = captions.length-1; i >= 0; i--)
+        captions[i].style.display="block";
+
+    index = -1;
+    gallery = null;
 }
 
-function show(id)
-{
-	el = document.getElementById(id);
-	el.classList.remove("hidden");
-	el.classList.add("visible");
-}
-
-function gallery_listener(e)
-{
-	var level = 0;
-	attached = true;
-  	for(var element = e.target; element; element = element.parentNode) {
-		if(element.id === 'img-gallery') {
-			next();
-			return;
-		}
-		level++;
-	}
-  	console.log("not img-gallery clicked");
+function debuglog() {
+    if (debug) {
+        console.log("index = " + index + " / " + imgs.length);
+        console.log("thisimgcontainer.innerHTML = " + thisimgcontainer.innerHTML);   
+        console.log("gallery = " + gallery);   
+        console.log("gallery.src = " + gallery.src);   
+        console.log("gallery.className = " + gallery.className);   
+        console.log("imgs[index] = " + imgs[index]);   
+        console.log("imgs[index].src = " + imgs[index].src);   
+        console.log("imgs[index].className = " + imgs[index].className);   
+        console.log("+");
+    }
 }

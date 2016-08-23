@@ -1,0 +1,19 @@
++ photo layout on secondary page
+  all visible
+  pinboard (varied sizes -- km)
+  ** or maybe just big images one after the other with no date or www nav so 
+  only choice is to X close the "window" **
+- replace X with a go back arrow or just remove X
+- image gallery
+    + fix $wide_tall to use relative urls (see /modernart.local/views/artist.php)
+    - add square, centered and bg as per modernart
+- fix mobile for image pinboard
+  if mobile, then just have them full width and follow the text
+x if no photos, the white space is too prominent
++ when texts are quite long after click need to scroll for photos
+x don’t know if it could work as a parallel column to the text….
+- sign pictures (PDF covers)
+- click on date goes to that date
+- page loading time debug
+  ** mostly due to A-Z -- there must be a more efficient way
+  have commented it out for the moment
