@@ -1,89 +1,98 @@
 // requires screenfull.js
 //
-// css
-//  .thumb
-//      .img-container
-//      .square
-//          .controls
-//      .img centered [wide][tall]
-//      .caption
+//  #gallery
+//      #gallery-square
+//          #gallery-next
+//          #gallery-prev
+//          #gallery-close
+//      #gallery-img
+//      #gallery-caption
+//
+//  .thumb (launches gallery)
+//
+// var imgs[], dims[] passed via php json
 
-var thumbs = [];
-var imgs = [];
 var index;
-var o_src;
-var gallery;
 var fullscreen;
 var fullwindow;
-var debug;
+var forcefullwindow = true;
+var debug = true;
+var thumbs = document.getElementsByClassName('thumb');
+var gallery = document.getElementById('gallery');
+var img = document.getElementById('gallery-img');
+var next = document.getElementById('gallery-next');
+var prev = document.getElementById('gallery-prev');
+var close = document.getElementById('gallery-close');
 
-// desktop or mobile
+// init
 
-if (screenfull.enabled && !fullwindow) 
+if (screenfull.enabled && !forcefullwindow) 
     fullscreen = true;
 else 
     fullwindow = true;
-
-// assign handlers    
-
-var thumbs = document.getElementsByClassName('thumb');
-
+if (screenfull.enabled) {
+    document.addEventListener(screenfull.raw.fullscreenchange, function() {
+        if (screenfull.isFullscreen)
+            set();
+        else
+            reset();
+    });
+}
+window.onorientationchange = readdeviceorientation;
 for (var i = 0; i < thumbs.length; i++) {
     ( function () {
         // ( closure ) -- retains state of local variables
-        var imgcontainer = thumbs[i].children[0];
-        var caption = thumbs[i].children[1];
-        var img = imgcontainer.children[1];          
-        var controlsnext = imgcontainer.children[0].children[0];
-        var controlsprev = imgcontainer.children[0].children[1];
-        var controlsclose = imgcontainer.children[0].children[2];
+        // + listener wrapped in function to pass variable
+        var thumb = thumbs[i];
         var j = i;
-
-        caption.addEventListener('click', function() {
-            index = j;
-            gallery = img;
-            var thisimgcontainer = this.previousElementSibling;
-            thisimgcontainer.style.display="block";
-            this.style.display="none"; 
-            if (fullscreen) {
-                screenfull.request(thisimgcontainer);
-            } else { 
-                imgcontainer.className = "img-container-fullwindow";
-                readdeviceorientation();
-            }
+        thumb.addEventListener('click', function() {
+            launch(j);
         });
-        controlsnext.addEventListener('click', next); 
-        controlsprev.addEventListener('click', prev); 
-        controlsclose.addEventListener('click', function() {                
-            var thisimgcontainer = this.parentElement.parentElement; 
-            var thiscaption = thisimgcontainer.nextElementSibling; 
-            thisimgcontainer.style.display="none";
-            thiscaption.style.display="block";
-            if (fullscreen)
-                screenfull.exit();
-            debuglog();
-        });
-        imgs.push(img);
     }());
 }
+next.addEventListener('click', nextimg); 
+prev.addEventListener('click', previmg); 
+close.addEventListener('click', exit);
 
-// navigation 
+// control
 
-function next() {
+function launch(thisimg) {
+    if (fullscreen) {
+        screenfull.request(gallery);
+    } else {
+        gallery.className = "fullwindow";
+        if (!forcefullwindow)
+            readdeviceorientation();
+        set();
+    }
+    index = thisimg;
+    img.src = imgs[index];
+    img.className = dims[index];
+}
+
+function nextimg() {
     index++;
-    if (index >= imgs.length)
+    if (index >= imgs.length) 
         index = 0;
-    gallery.src = imgs[index].src;
-    gallery.className = imgs[index].className;
+    img.src = imgs[index];
+    img.className = dims[index];
     debuglog();
 }
 
-function prev() {
+function previmg() {
     index--;
     if (index < 0)
         index = imgs.length - 1;
-    gallery.src = imgs[index].src;
-    gallery.className = imgs[index].className;
+    img.src = imgs[index];
+    img.className = dims[index];
+    debuglog();
+}
+
+function exit() {
+    img.src = "";
+    gallery.style.display = "none";
+    if (fullscreen)
+        screenfull.exit();
     debuglog();
 }
 
@@ -92,16 +101,13 @@ document.onkeydown = function(e) {
         e = e || window.event;
         switch(e.which || e.keyCode) {
             case 37: // left
-                prev();
+                previmg();
                 break;
             case 39: // right
-                next();
+                nextimg();
                 break;
             case 27: // esc
-                var thisimgcontainer = gallery.parentElement;
-                var thiscaption = thisimgcontainer.nextElementSibling;
-                thisimgcontainer.style.display="none";
-                thiscaption.style.display="block";   
+                exit();
                 debuglog();
                 break;
             default: return; // exit this handler for other keys
@@ -110,15 +116,17 @@ document.onkeydown = function(e) {
      }
 }
 
-if (screenfull.enabled) {
-    document.addEventListener(screenfull.raw.fullscreenchange, function() {
-        if (!screenfull.isFullscreen) {
-            resetthumbnail();
-        }
-    });
+// utility
+
+function set() {
+    gallery.style.display = "block";
 }
 
-// iOS device orientation
+function reset() {
+    img.src = "";
+    gallery.style.display = "none";
+    index = -1;
+    }
 
 function readdeviceorientation() {
     var thisimgcontainer = gallery.parentElement;
@@ -131,33 +139,12 @@ function readdeviceorientation() {
     }
 }
 
-window.onorientationchange = readdeviceorientation;
-
-// utility
-
-function resetthumbnail() {
-    imgcontainers = document.getElementsByClassName('img-container');
-    for (var i = imgcontainers.length-1; i >= 0; i--)
-        imgcontainers[i].style.display="none";
-
-    captions = document.getElementsByClassName('caption');
-    for (var i = captions.length-1; i >= 0; i--)
-        captions[i].style.display="block";
-
-    index = -1;
-    gallery = null;
-}
-
 function debuglog() {
     if (debug) {
-        console.log("index = " + index + " / " + imgs.length);
-        console.log("thisimgcontainer.innerHTML = " + thisimgcontainer.innerHTML);   
-        console.log("gallery = " + gallery);   
-        console.log("gallery.src = " + gallery.src);   
-        console.log("gallery.className = " + gallery.className);   
-        console.log("imgs[index] = " + imgs[index]);   
-        console.log("imgs[index].src = " + imgs[index].src);   
-        console.log("imgs[index].className = " + imgs[index].className);   
         console.log("+");
+        console.log("index = " + index + " / " + imgs.length);
+        console.log("img.src = " + img.src);   
+        console.log("imgs.className = " + img.className);   
+        console.log("gallery.style.display = " + gallery.style.display);   
     }
 }
