@@ -42,13 +42,14 @@ window.onorientationchange = readdeviceorientation;
 for (var i = 0; i < thumbs.length; i++) {
     ( function () {
         // ( closure ) -- retains state of local variables
+        // by making capturing context, here using j
         // + listener wrapped in function to pass variable
         var thumb = thumbs[i];
         var j = i;
         thumb.addEventListener('click', function() {
             launch(j);
         });
-    }());
+    })();
 }
 next.addEventListener('click', nextimg); 
 prev.addEventListener('click', previmg); 
@@ -68,6 +69,7 @@ function launch(thisimg) {
     index = thisimg;
     img.src = imgs[index];
     img.className = dims[index];
+    debuglog();
 }
 
 function nextimg() {

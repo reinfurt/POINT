@@ -39,9 +39,9 @@ $media_dims = array();
         $float = (rand(0, 1) == 0) ? 'left' : 'right';
         $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
 	?>
-	<div class="thumb">
+	<div class="thumb" style="<? echo $style; ?>">
 		<div class="img-container">
-            <img src="<? echo $url; ?>" style="<? echo $style; ?>">         
+            <img src="<? echo $url; ?>">         
         </div>
 		<div class="caption">
             <? echo $caption; ?>

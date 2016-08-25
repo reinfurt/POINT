@@ -5,6 +5,7 @@
     + cleanup fullscreen transition
     + add $body
     + fix .centered
+    - fix thumb click closure etc for img index #
 + replace X with a go back arrow or just remove X
 - mobile for image pinboard
   full width and follow the text
