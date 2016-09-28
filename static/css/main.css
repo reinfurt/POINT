@@ -246,6 +246,8 @@ figure {
 .img-container {
     position: relative;
     display: block;
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
 }
 
 .image {
