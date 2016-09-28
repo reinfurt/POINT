@@ -26,7 +26,7 @@ for($i = 0; $i < count($body_arr); $i++)
 	{
 		if($i % 2 == 0)
 		{ ?><div class="column-container"><? }
-		?><div class="column"><? echo $b; ?></div><?
+		?><div class="twocolumn"><? echo $b; ?></div><?
 		if($i % 2 != 0)
 		{ ?></div><? }
 		$i++;

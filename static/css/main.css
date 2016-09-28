@@ -274,14 +274,25 @@ figure {
 
 .column-container {
 	/* display: inline-block; */
-	display: inline-flex;
+	/* display: inline-flex; */
 }
 
 .column {
 	position: relative;
-	/*display: inline-block;*/
+	/* display: inline-block; */
 	vertical-align: top;
-	width: 25vw;
+	/* width: 25vw; */
+	width: 25%;
+	padding: 20px;
+	padding-bottom: 17px;	
+	z-index: 5;
+}
+
+.twocolumn {
+	position: relative;
+	/* display: inline-block; */
+	vertical-align: top;
+	width: 50%;
 	padding: 20px;
 	padding-bottom: 17px;	
 	z-index: 5;
