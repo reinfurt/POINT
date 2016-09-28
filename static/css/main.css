@@ -95,7 +95,7 @@ figure {
 
 #page {
 	position: absolute;
-    right: 0px;
+    left: 0px;
     top: 0px;
     float:right;
     display:block;
@@ -271,7 +271,8 @@ figure {
 }
 
 .column-container {
-	display: inline-block;
+	/* display: inline-block; */
+	display: inline-flex;
 }
 
 .column {
