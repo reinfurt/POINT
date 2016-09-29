@@ -299,10 +299,6 @@ figure {
 	z-index: 5;
 }
 
-.column2 {
-    left: 25%;
-}
-
 .hidden {
 	visibility: hidden;
 	display: none;

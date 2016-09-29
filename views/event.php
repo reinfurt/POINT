@@ -22,7 +22,7 @@ $media_dims = array();
 	</div>
 
 
-	<figure id="thumbs-container" class="column column2"><?
+	<figure id="thumbs-container" class="column top right"><?
 	$i = 0;
 	foreach($media as $m) {
 		$url = m_url($m);
