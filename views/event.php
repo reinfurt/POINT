@@ -22,7 +22,7 @@ $media_dims = array();
 	</div>
 
 
-	<figure id="img-pinboard"><?
+	<figure id="thumbs-container" class="column column2"><?
 	$i = 0;
 	foreach($media as $m) {
 		$url = m_url($m);
@@ -37,7 +37,8 @@ $media_dims = array();
         $margin = rand(0, 20);
         $width = rand(2, 5)*10;
         $float = (rand(0, 1) == 0) ? 'left' : 'right';
-        $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
+        // $style = "width: " . $width . "%; float: " . $float . "; padding: " . $padding ."px; margin: " . $margin ."px;";
+        $style = "width: 100%;";
 	?>
 	<div class="thumb" style="<? echo $style; ?>">
 		<div class="img-container">
@@ -69,7 +70,7 @@ $media_dims = array();
     }
     else
     {
-    ?><div class="now column">
+    ?><div class="now column top right">
         <p>Meanwhile, here is what’s happening now:</p>
         <div id="ticker-wrapper">
             <div id="ticker-display"></div>

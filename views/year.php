@@ -6,6 +6,7 @@ if($use_imgs)
 	$year = $uu->urls[1];
 	if(!intval($year))
 		$year = "2016";
+    // if 2016, show entire menu
 	$y_arr = str_split($year);
 	
 	$urls = array();

@@ -17,29 +17,12 @@ x don’t know if it could work as a parallel column to the text….
 - page loading time debug
   ** mostly due to A-Z -- there must be a more efficient way
   have commented it out for the moment
-- actually i can’t see where that first big 2013 vertical indent (TM) comes
-from, i.e. how Andree may have unknowingly flipped the pizza switch. it
-happens on the other year pages also, and am suspecting it might have
-something to do with the area created by the  “Choose a year …” part on
-the homepage, i.e. as if the “Frame” of that “text box” is pushing the
-text on subsequent pages downwards?
+- add dates on home
+- adjust image gallery
+- css 4 column float
+- css thumbnails float column
 
-—
-
-2013 #019 doesn’t link and not sure how to get it to (URL is truncated and
-can’t see how to delete and reinstate, for instance)
-same with #020
-and #024 
-
-—
-
-in the #014 entry, if i try to link from “free shop” to the Superflex free
-shop entry for 2013 in ORG, i.e.
-o-r-g.com/point/annual-reports/2013/free-shop
-
-once back on the website proper the link instead goes to
-http://www.superflex.net/freeshop/
-
+    
 —
 
 #031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF as

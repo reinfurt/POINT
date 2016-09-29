@@ -92,6 +92,30 @@ else
 				<div id="year-select">
 					Select a year to review.&nbsp;.&nbsp;.&nbsp;
 				</div>
-			</div><?
+			</div>
+
+			<div id="years"><?
+			$report_id = 2;
+			$u = $oo->get($report_id)['url'];
+			$reports = $oo->children($report_id);
+			foreach($reports as $r)
+			{
+				$url = $host.$u."/".$r['url'];
+				?><div><a href="<? echo $url; ?>"><? echo $r['name1']; ?></a></div><?
+			}
+		    ?></div>
+
+			<script>
+				year_select = document.getElementById("year-select");
+				year_select.onclick = 
+					function()
+					{
+						years = document.getElementById("years");
+						if(years.style.display == "block")
+							years.style.display = "none";		
+						else
+							years.style.display = "block";
+					};
+			</script><?
             } ?>
 		</header>
