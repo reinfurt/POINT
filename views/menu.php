@@ -14,13 +14,8 @@ $cover_urls = array();
 if($is_report)
 {
 	$cover_url = m_url($oo->media($uu->id)[0]);
-	?><div id="reports-alt"
-		onmouseover="show_reports();"
-		onmouseout="hide_reports();"
-	>
-		<div
-			class="report-container select"		
-			>
+	?><div id="reports-alt" onmouseover="show_reports();" onmouseout="hide_reports();">
+		<div class="report-container select">
 			<a href="<? echo $host.$uu->urls(); ?>">
 				<img class="report-img" src="<? echo $cover_url; ?>">
 			</a>

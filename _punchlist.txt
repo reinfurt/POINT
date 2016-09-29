@@ -20,9 +20,8 @@ x don’t know if it could work as a parallel column to the text….
 - add dates on home
 - adjust image gallery
 - css 4 column float
-- css thumbnails float column
-
-    
+- all links to open in new windows
+  add a target to all a href elements? or all processed in markdown    
 —
 
 #031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF as

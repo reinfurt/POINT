@@ -24,7 +24,7 @@ $name = strip_tags($item["name1"]);
 // document title
 $item = $oo->get($uu->id);
 $title = $item["name1"] ? $item["name1"] : "Point";
-if ($title == "Point") $home = true;
+if ($title == "Point") $is_home = true;
 
 $now_children = $oo->children(1);
 
@@ -77,9 +77,9 @@ $js_back = "javascript:history.back();";
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body><?
-if ($home)
+    if ($is_home)
 		require_once("year-menu.php");
-else
+    else if ($is_report)
 		require_once("year.php");
 
 

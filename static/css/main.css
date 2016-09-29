@@ -254,8 +254,8 @@ figure {
 }
 
 .report-container {
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    bottom: 0px;
     right: 0px;
 	display: inline-block;
 	float: right;
