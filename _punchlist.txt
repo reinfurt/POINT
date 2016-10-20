@@ -7,7 +7,7 @@
     + fix .centered
     - fix thumb click closure etc for img index #
 + replace X with a go back arrow or just remove X
-- mobile for image pinboard
+x mobile for image pinboard
   full width and follow the text
 x if no photos, the white space is too prominent
 + when texts are quite long after click need to scroll for photos
@@ -17,6 +17,7 @@ x don’t know if it could work as a parallel column to the text….
 - page loading time debug
   ** mostly due to A-Z -- there must be a more efficient way
   have commented it out for the moment
+- open records generator delete entries
 - add dates on home
 - adjust image gallery
 - css 4 column float
@@ -28,4 +29,19 @@ x don’t know if it could work as a parallel column to the text….
 i would an image file but no dice (broken link); is there a different way of
 doing this here (i.e. unlike Bulls)
 
+
+--
+
+— we discussed the new list of years and means of using the single and 
+double columns. she’s into that well enough, but when i was showing her the 
+four column setting seemed notably thin and not entirely convincing so need 
+a bit or work on that i think. as for the images, i was having a hard time 
+recalling what we’d decided, if anything. mainly, whether we’re suggesting 
+one immediately large image on most pages, or a range of small ones stacked 
+(currently on the right but am not sure as it makes the whole thing still 
+look very sparse, which is of course also a consequence of there not being 
+many images to speak of even when ‘a lot’. she was into the BW imagery. 
+incidentally, made me think that the images at the end of the PDF should 
+also be BW, both to level em out as we’ve said, and also to make it cheaper 
+for anyone printing off the document.
 
