@@ -1,4 +1,5 @@
 <?
+
 // via
 // http://stackoverflow.com/questions/20744995/how-to-sort-an-array-with-php-ignoring-the-articles-a-an-the-in-the-beginni
 
@@ -12,8 +13,7 @@ function handleArticles($str)
     list($first, $rest) = explode(" ",$str." ",2);
 
     $validarticles = array("a","an","the");
-    
-    
+        
     if (in_array(strtolower($first), $validarticles)) 
         return $rest.", ".$first;
     
@@ -25,11 +25,9 @@ function sort_sans_articles($a, $b)
     return strnatcasecmp(handleArticles($a),handleArticles($b));
 }
 
-
-?><div class="now">
+?><!-- <div class="now">
     <div id="a-z-select">A–Z</div>
-</div>
-    
+</div> -->
 <div id="a-z" class="now"><?
     $report_ids = array(3, 4, 5, 6);
     // make (wires.fromid = 3 OR wires.fromid = 4 . . . )
@@ -71,13 +69,14 @@ function sort_sans_articles($a, $b)
         ?><!-- div><a href="<? echo $url; ?>"><? echo $r['name1']; ?></a></div --><?
     }
     uasort($names, 'sort_sans_articles');
-    
+            
     foreach($names as $id => $name)
     {
         ?><div><a href="<? echo $urls[$id]; ?>"><? echo $name; ?></a></div><?
     }
     ?></div>
-    <script>
+	
+    <!-- <script>
         a_z_select = document.getElementById("a-z-select");
         a_z_select.onclick = 
         function()
@@ -88,5 +87,5 @@ function sort_sans_articles($a, $b)
             else
                 a_z.style.display = "block";
             };
-    </script>
+    </script> -->
 </div>

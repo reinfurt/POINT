@@ -3,14 +3,15 @@ $u = rtrim($_SERVER['REQUEST_URI'], "/");
 
 // last four digits are numbers, ie page is an annual report
 $pattern = '(/\d{4}$)';
-if(preg_match($pattern, $u))
+if (preg_match($pattern, $u))
 	$view = "report";
+else if (preg_match('/a-z/',$u))
+	$view = "a-z";
 else
 	$view = "event";
 
 require_once("views/head.php");
 require_once("views/".$view.".php");
 require_once("views/menu.php");
-// require_once("views/a-z.php");
 require_once("views/foot.php");
 ?>

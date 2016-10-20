@@ -11,28 +11,26 @@ x mobile for image pinboard
   full width and follow the text
 x if no photos, the white space is too prominent
 + when texts are quite long after click need to scroll for photos
-x don’t know if it could work as a parallel column to the text….
+x dont know if it could work as a parallel column to the text.
 - sign pictures (PDF covers)
-- click on date goes to that date
-- page loading time debug
-  ** mostly due to A-Z -- there must be a more efficient way
-  have commented it out for the moment
-- open records generator delete entries
-- add dates on home
-- adjust image gallery
++ click on date goes to that date
++ page loading time debug (break out A-Z db call)
++ open records generator delete entries
++ add dates on home
+/ adjust image gallery
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
-—
-
-#031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF as
-i would an image file but no dice (broken link); is there a different way of
-doing this here (i.e. unlike Bulls)
-
 
 --
 
-— we discussed the new list of years and means of using the single and 
+- #031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF 
+as i would an image file but no dice (broken link); is there a different way 
+of doing this here (i.e. unlike Bulls)
+
+--
+
+- we discussed the new list of years and means of using the single and 
 double columns. she’s into that well enough, but when i was showing her the 
 four column setting seemed notably thin and not entirely convincing so need 
 a bit or work on that i think. as for the images, i was having a hard time 
