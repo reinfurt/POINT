@@ -9,7 +9,7 @@ for ($i = $currentyear; $i >= 2013; $i--) {
     $urlpoint = $media_path."png/point.png";
     	
     ?><a href="<? echo $host . "annual-reports/" . $year; ?>"><?
-    ?><div class="year-container"><?
+    ?><div class="year-container blink"><?
 	foreach($urls as $u) {
     	?><div class="digit-container">
 	    	<img src="<? echo $u; ?>">
