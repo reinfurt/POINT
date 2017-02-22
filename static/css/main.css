@@ -83,10 +83,11 @@ figure {
 	padding-bottom: 50px;
 }
 
-#reports {
+#report {
 	/*position: fixed;*/
     bottom: 0px;
     right: 0px;
+    margin-top: 150px;
 }
 
 #reports-alt {
