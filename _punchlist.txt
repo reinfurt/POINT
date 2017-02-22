@@ -30,7 +30,7 @@ of doing this here (i.e. unlike Bulls)
 
 --
 
-- we discussed the new list of years and means of using the single and 
+x we discussed the new list of years and means of using the single and 
 double columns. she’s into that well enough, but when i was showing her the 
 four column setting seemed notably thin and not entirely convincing so need 
 a bit or work on that i think. as for the images, i was having a hard time 
@@ -43,3 +43,14 @@ incidentally, made me think that the images at the end of the PDF should
 also be BW, both to level em out as we’ve said, and also to make it cheaper 
 for anyone printing off the document.
 
+--
+
+- 2/22/2017 skyped with andre, stuart, max (editor now) and agreed to 
+launch at the end of april. max is editing 2014, 2015, 2016 to match 
+2013. he will input changes direct into o-r-g. 
+
+- dot only to blink on rollover
+- meanwhile... debug, fix
+- add landing pages for all links which lead off the site
+  something like, "For more, see http://..."
+- mobile css (should be straightforward)
