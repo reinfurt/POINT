@@ -9,11 +9,15 @@ if($use_imgs)
     // if 2016, show entire menu
 	$y_arr = str_split($year);
 	
+    if($is_event)
+        $link = $host . "annual-reports/" . $year; 
+    else 
+        $link = $host;
 	$urls = array();
 	foreach($y_arr as $d)
 		$urls[] = $media_path."png/$d.png";
 		$urlpoint = $media_path."png/point.png";
-?><a href='<? echo $host; ?>'><div id="year" class="h-centre blink"><?
+?><a href='<? echo $link; ?>'><div id="year" class="h-centre blink"><?
 	foreach($urls as $u)
 	{
 	?>

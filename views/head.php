@@ -79,7 +79,7 @@ $js_back = "javascript:history.back();";
 	<body><?
     if ($is_home)
 		require_once("year-menu.php");
-    else if ($is_report)
+    else if ($is_report || $is_event)
 		require_once("year.php");
 
 
