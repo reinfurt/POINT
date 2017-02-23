@@ -21,36 +21,19 @@ x dont know if it could work as a parallel column to the text.
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
-
---
-
-- #031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF 
-as i would an image file but no dice (broken link); is there a different way 
-of doing this here (i.e. unlike Bulls)
-
---
-
-x we discussed the new list of years and means of using the single and 
-double columns. she’s into that well enough, but when i was showing her the 
-four column setting seemed notably thin and not entirely convincing so need 
-a bit or work on that i think. as for the images, i was having a hard time 
-recalling what we’d decided, if anything. mainly, whether we’re suggesting 
-one immediately large image on most pages, or a range of small ones stacked 
-(currently on the right but am not sure as it makes the whole thing still 
-look very sparse, which is of course also a consequence of there not being 
-many images to speak of even when ‘a lot’. she was into the BW imagery. 
-incidentally, made me think that the images at the end of the PDF should 
-also be BW, both to level em out as we’ve said, and also to make it cheaper 
-for anyone printing off the document.
-
---
-
-- 2/22/2017 skyped with andre, stuart, max (editor now) and agreed to 
-launch at the end of april. max is editing 2014, 2015, 2016 to match 
-2013. he will input changes direct into o-r-g. 
-
 - dot only to blink on rollover
 - meanwhile... debug, fix
 - add landing pages for all links which lead off the site
   something like, "For more, see http://..."
 - mobile css (should be straightforward)
+
+--
+
+* #031 Haroun Farocki screenings is a PDF with schedule. i attached the PDF 
+as i would an image file but no dice (broken link); is there a different way 
+of doing this here (i.e. unlike Bulls)
+
+* 2/22/2017 skyped with andre, stuart, max (editor now) and agreed to 
+launch at the end of april. max is editing 2014, 2015, 2016 to match 
+2013. he will input changes direct into o-r-g. 
+
