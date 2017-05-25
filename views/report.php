@@ -20,6 +20,11 @@ for($i = 0; $i < count($body_arr); $i++)
 
 
 ?>
+
+<div id="back">
+    <a href="<? echo $host; ?>index.php"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+</div>
+
 <div id="report"><?
 	$i = 0;
 	foreach($body_arr as $b)

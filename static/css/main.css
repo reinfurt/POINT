@@ -14,6 +14,7 @@ html, body {
 	font-family: "Optima", Helvetica, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 17px;
+    background-color: #FFFFFF;
 }
 
 p {
@@ -234,6 +235,12 @@ figure {
     z-index: 10;
 }
 
+#back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 #hand {
     width: 26px;
 }
@@ -250,10 +257,12 @@ figure {
 
 .img-container {
     position: relative;
+    margin-bottom: 10px;
     display: block;
+    border: solid 5px white;
+    box-shadow:2px 2px 10px #CCCCCC;
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
-    box-shadow:2px 2px 5px #CCCCCC;
 }
 
 .image {
