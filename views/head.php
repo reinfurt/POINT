@@ -91,11 +91,10 @@ $js_back = "javascript:history.back();";
 				Contemporary Art, Nicosia, Cyprus since the end of 2012.<?
 				if ($view == "a-z") {
 					?><div id="year-select">
-						Select a project .&nbsp;.&nbsp;.&nbsp;
 					</div><?
 				} else {
 					?><div id="year-select">
-						Select a year .&nbsp;.&nbsp;.&nbsp;
+						Choose a year <img id="hand" class="blink" src="media/png/hand.png">
 					</div><?
 				}
 			?></div><?

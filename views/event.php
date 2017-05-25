@@ -16,9 +16,9 @@ $media_dims = array();
             <!-- <p id="orientation" class="controls centered white">Rotate device to determine orientation</p> -->
         </div>
         <img id="gallery-img" src="">
-		<div id="gallery-caption">
-            <? echo $caption; ?>
-        </div>
+    		<div id="gallery-caption">
+                <? echo $caption; ?>
+            </div>
 	</div>
 
 
@@ -62,7 +62,7 @@ $media_dims = array();
             echo $b_arr[$i] . "<br />";
             $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
             ?><div class="now">
-                <a href="<? echo $report_url; ?>">Go back to <? echo $year; ?>. . . </a>
+                <a href="<? echo $report_url; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
             </div>
         </div>
     </div>

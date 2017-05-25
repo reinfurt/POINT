@@ -128,7 +128,7 @@ figure {
 #dot img {
     height: 12px;
     width: 12px;
-	margin-left: 14px;
+	margin-left: 30px;
     display: inline-block;
 }
 
@@ -234,6 +234,10 @@ figure {
     z-index: 10;
 }
 
+#hand {
+    width: 26px;
+}
+
 
 /*-----------------------------------------------
   classes
@@ -249,6 +253,7 @@ figure {
     display: block;
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
+    box-shadow:2px 2px 5px #CCCCCC;
 }
 
 .image {
@@ -317,14 +322,16 @@ figure {
 
 .year-container {
     padding: 10px;
+    padding-bottom: 20px;
     display: block;
+    white-space: nowrap;
 }
 
 .digit-container > img {
     max-width: 100%;
     max-height: 100%;
     width: initial;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .digit-container {
