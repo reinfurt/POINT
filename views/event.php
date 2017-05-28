@@ -10,8 +10,8 @@ $media_dims = array();
 	<div id="gallery">
         &nbsp;
         <div id="gallery-square">
-            <div id="gallery-next" class="controls white"></div>
-            <div id="gallery-prev" class="controls white"></div>
+            <div id="gallery-next" class="controls white"><img id="hand" src="<? echo $host; ?>media/png/hand-right.png"></div>
+            <div id="gallery-prev" class="controls white"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></div>
             <div id="gallery-close" class="controls white"><img src="<? echo $host; ?>media/svg/ex.svg" style="width:20px;"></div>
             <!-- <p id="orientation" class="controls centered white">Rotate device to determine orientation</p> -->
         </div>
@@ -20,7 +20,6 @@ $media_dims = array();
                 <? echo $caption; ?>
             </div>
 	</div>
-
 
 	<figure id="thumbs-container" class="column top right"><?
 	$i = 0;

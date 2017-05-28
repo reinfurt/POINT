@@ -30,6 +30,7 @@ x dont know if it could work as a parallel column to the text.
 - hand blink
 - add hands to image carousel left and right
 - reduce all img sizes
+- add css cursor change to images
 
 --
 

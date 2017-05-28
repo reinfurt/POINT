@@ -94,7 +94,7 @@ $js_back = "javascript:history.back();";
 					</div><?
 				} else {
 					?><div id="year-select">
-						Choose a year <img id="hand" class="blink" src="media/png/hand.png">
+						Choose a year <img id="hand" class="blink" src="media/png/hand-right.png">
 					</div><?
 				}
 			?></div><?
