@@ -77,10 +77,13 @@ $js_back = "javascript:history.back();";
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body><?
+    /*
     if ($is_home)
 		require_once("year-menu.php");
     else if ($is_report || $is_event)
 		require_once("year.php");
+    */
+    require_once("year-menu.php");
 
         if ($is_event != "true" && $is_report == false) { 
 		?><header class="now column">

@@ -1,3 +1,15 @@
+<!--
+// if ($title == "Point") $is_home = true;
+// look in o-r-g, get all years that are objects
+// break up strings into letters, 
+// use letters to recover pngs
+// if $is_home (very crappy) then show full menu, otherwise show only one year
+// better way would be to look at url and get date from that
+// rm hardcoded year below (!)
+// on rollover, drop down menu of years
+// resolve blink
+-->
+
 <div id="year" class="h-centre"><?
 $currentyear = 2016;
 for ($i = $currentyear; $i >= 2013; $i--) {
