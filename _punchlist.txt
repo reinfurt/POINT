@@ -12,12 +12,15 @@ x mobile for image pinboard
 x if no photos, the white space is too prominent
 + when texts are quite long after click need to scroll for photos
 x dont know if it could work as a parallel column to the text.
-- sign pictures (PDF covers)
 + click on date goes to that date
 + page loading time debug (break out A-Z db call)
 + open records generator delete entries
 + add dates on home
-/ adjust image gallery
+x adjust image gallery
++ add hands to image carousel left and right
++ add css cursor change to images
+x hand blink    
+- years aligmment, index.php / event.php
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
@@ -26,11 +29,10 @@ x dont know if it could work as a parallel column to the text.
 - add landing pages for all links which lead off the site
   something like, "For more, see http://..."
 - mobile css (should be straightforward)
-- meanwhile *fix*
-- hand blink
-- add hands to image carousel left and right
 - reduce all img sizes
-- add css cursor change to images
+- meanwhile *fix*
+- sign pictures (PDF covers)
+- mobile css
 
 --
 
