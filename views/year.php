@@ -17,16 +17,21 @@ if($use_imgs)
 	foreach($y_arr as $d)
 		$urls[] = $media_path."png/$d.png";
 		$urlpoint = $media_path."png/point.png";
-?><a href='<? echo $link; ?>'><div id="year" class="h-centre blink"><?
-	foreach($urls as $u)
-	{
-	?>
-	<div class="digit-container">
-		<img src="<? echo $u; ?>">
-	</div><?
-	}
-	?><span id="dot" class="blink"><img src="<? echo $urlpoint; ?>"></span><?
-?></div></a><?
+?><a href='<? echo $link; ?>'>
+    <div id="year" class="h-centre">
+        <div class="year-container blink"><?
+    	foreach($urls as $u)
+	    {
+	    ?>
+	        <div class="digit-container">
+		        <img src="<? echo $u; ?>">
+	        </div><?
+	    }
+	?><span id="dot" class="blink"><img src="<? echo $urlpoint; ?>">
+    </span>
+    </div>
+</div>
+</a><?
 }
 else
 {

@@ -82,7 +82,6 @@ $js_back = "javascript:history.back();";
     else if ($is_report || $is_event)
 		require_once("year.php");
 
-
         if ($is_event != "true" && $is_report == false) { 
 		?><header class="now column">
 			<div>

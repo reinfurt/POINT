@@ -20,15 +20,12 @@ x adjust image gallery
 + add hands to image carousel left and right
 + add css cursor change to images
 x hand blink    
-- years aligmment, index.php / event.php
+/ years aligmment, index.php / event.php
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
 - dot only to blink on rollover
 - meanwhile... debug, fix
-- add landing pages for all links which lead off the site
-  something like, "For more, see http://..."
-- mobile css (should be straightforward)
 - reduce all img sizes
 - meanwhile *fix*
 - sign pictures (PDF covers)
