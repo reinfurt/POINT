@@ -5,7 +5,7 @@
 
 $thisyear = $uu->urls[1];
 if(intval($thisyear))
-    $thisyearobject = $oo->get($uu->id);
+    $thisyearobject["name1"] = $thisyear;
 else
     $thisyear = null;
 
