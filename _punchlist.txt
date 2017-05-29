@@ -22,12 +22,11 @@ x adjust image gallery
 x hand blink    
 + years aligmment, index.php / event.php
 + rewrite year-menu.php and year.php to be one, simpler etc
-
-***
-- error 500 internal server configuration problem with loading year-menu.php on server in head.php
++ error 500 internal server configuration problem with loading year-menu.php on server in head.php
   in views/year-menu.php at $oo->get_all
-***
-
+  turns out the real problem is in open-records-generator/models/model.php
+  where the DESC flag is still wreaking havoc
+- update open-records-generator on local (git submodule etc)
 - dot only to blink on rollover
 - css 4 column float
 - all links to open in new windows
