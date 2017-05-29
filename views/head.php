@@ -22,7 +22,6 @@ else
 $name = strip_tags($item["name1"]);
 
 // document title
-$item = $oo->get($uu->id);
 $title = $item["name1"] ? $item["name1"] : "Point";
 if ($title == "Point") $is_home = true;
 

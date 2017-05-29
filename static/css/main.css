@@ -68,6 +68,20 @@ figure {
 	display: none;
 }
 
+#year-menu {
+    position: fixed;
+    display: block;
+    top: 0px;
+    width: 404px;
+    height: 114px;
+    padding: 30px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    line-height: 1.2em;
+    white-space: nowrap;
+    z-index: +1;
+}
+
 #a-z-select {
 	position: fixed;
 	padding-top: 17px;

@@ -22,13 +22,12 @@ x adjust image gallery
 x hand blink    
 / years aligmment, index.php / event.php
   rewrite year-menu.php and year.php to be one, simpler etc
+- dot only to blink on rollover
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
-- dot only to blink on rollover
-- meanwhile... debug, fix
 - reduce all img sizes
-- meanwhile *fix*
+- meanwhile ... *fix*
 - sign pictures (PDF covers)
 - mobile css
 
