@@ -30,6 +30,7 @@ x hand blink
 + reduce all img sizes
 x dot only to blink on rollover (expand width of dot div) or red
 + hover / active states css
++ a-z link fix on second-level pages
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
 - meanwhile ... *fix*
@@ -56,6 +57,4 @@ intentional, ignore this.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
 
-- The A-Z backlink doesn’t appear to be functional on the individual entry
-pages.
 
