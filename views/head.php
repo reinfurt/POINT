@@ -61,7 +61,6 @@ function process_event($b)
 }
 
 $js_back = "javascript:history.back();";
-	
 ?>
 <!DOCTYPE html>
 <html>
