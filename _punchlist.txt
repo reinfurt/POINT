@@ -38,7 +38,7 @@ text disappears when the linked text is clicked. If that was intentional,
 ignore this.
 + a-z link fix on second-level pages
 + meanwhile ... * fix *
-- sign pictures (PDF covers)
++ sign pictures (PDF covers)
 - css 4 column float? 
 - mobile css
 
