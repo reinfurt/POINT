@@ -1,4 +1,4 @@
-* {
+\* {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -151,6 +151,14 @@ figure {
     display: inline-block;
 }
 
+#dot img:hover {
+    opacity: 0.5;
+}
+
+#dot img:active {
+    opacity: 0.0;
+}
+
 #gallery {
     /* position: relative; */
     display: none;
@@ -263,6 +271,13 @@ figure {
     width: 26px;
 }
 
+#hand:hover {
+    opacity: 0.5;
+}
+
+#hand:active {
+    opacity: 0.0;
+}
 
 /*-----------------------------------------------
   classes
@@ -355,6 +370,14 @@ figure {
     white-space: nowrap;
 }
 
+.year-container:hover {
+    opacity: 0.5;
+}
+
+.year-container:active {
+    opacity: 0.0;
+}
+
 .digit-container > img {
     max-width: 100%;
     max-height: 100%;
@@ -426,8 +449,12 @@ figure {
     user-select: none;
 }
 
-.controls:active {
+.controls:hover {
     opacity: 0.5;
+}
+
+.controls:active {
+    opacity: 0.0;
 }
 
 .times { 
@@ -470,13 +497,12 @@ p.now {
 -----------------------------------------------*/
 
 .blink:hover {
-    opacity: 0.5;
-	/* animation: blink 1s steps(2, start) infinite; */
-	/* -webkit-animation: blink 1s steps(2, start) infinite; */
+	animation: blink 1s steps(2, start) infinite;
+	-webkit-animation: blink 1s steps(2, start) infinite;
 }
 
 .blink:active {
-    opacity: 0.1;
+    opacity: 0.0;
 }
 
 @keyframes blink {

@@ -34,13 +34,13 @@ foreach($yearsinorder as $year) {
 		$urls[] = $media_path."png/$d.png";
     $urlpoint = $media_path."png/point.png";
     ?><a href="<? echo $host . "annual-reports/" . $year['o']['name1']; ?>"><?
-        ?><div class="year-container blink"><?
+        ?><div class="year-container"><?
         foreach($urls as $u) {
             ?><div class="digit-container">
                 <img src="<? echo $u; ?>">
             </div><?
         }
-        ?><span id="dot" class="blink"><img src="<? echo $urlpoint; ?>"></span><?
+        ?><span id="dot"><img src="<? echo $urlpoint; ?>"></span><?
         ?></div><?
     ?></a><?
 }

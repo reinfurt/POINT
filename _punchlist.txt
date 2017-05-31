@@ -29,7 +29,7 @@ x hand blink
 + update open-records-generator on local (git submodule etc)
 - reduce all img sizes
 / dot only to blink on rollover (expand width of dot div) or red?
-- hover / active states css
++ hover / active states css
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
 - meanwhile ... *fix*
