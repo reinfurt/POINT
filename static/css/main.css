@@ -622,7 +622,9 @@ p.now {
         position: relative;
         left: 0px;
     }
+
+    .now {
+        visibility: hidden;
+    }
     /* end */
-
-
 }
