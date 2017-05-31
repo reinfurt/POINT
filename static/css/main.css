@@ -38,7 +38,7 @@ a:visited {
 }
 
 a:hover {
-    color: #0000ff;
+    opacity: 0.5;
 }
 
 a:active {

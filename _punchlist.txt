@@ -30,9 +30,13 @@ x hand blink
 + reduce all img sizes
 x dot only to blink on rollover (expand width of dot div) or red
 + hover / active states css
+x add target to all a href elements? processed in markdown?
+x doesn’t look like Optima has Greek (or Polish) character support. The Greek 
+characters are rendering in a different sans serif font.
++ link active color is the same color as the background color (white) so the 
+text disappears when the linked text is clicked. If that was intentional, 
+ignore this.
 + a-z link fix on second-level pages
-- all links to open in new windows
-  add a target to all a href elements? or all processed in markdown    
 - meanwhile ... *fix*
 - sign pictures (PDF covers)
 - css 4 column float
@@ -44,13 +48,8 @@ x dot only to blink on rollover (expand width of dot div) or red
 automatically indenting. I didn’t want to screw with the markdown/html.
 Maybe there’s an easy way to do this you know about.
 
-- It doesn’t look like Optima has Greek character support. The Greek
-characters are rendering in a different sans serif font. (Polish character
-support is missing too. See PAWEL ALTHAMER.)
 
-- Link active color is the same color as the background color (white) so
-the text disappears when the linked text is clicked. If that was
-intentional, ignore this.
+
 
 - On tablets, the annual report index nav is getting cut off on the right
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
