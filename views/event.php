@@ -80,18 +80,18 @@ $media_dims = array();
             }
             ?></div>
         </div>
-    <script type="text/javascript">
-        //var animate = !(checkCookie("animateCookie"));
-        //setCookie("animateCookie");
-        animate = true;
-        tickerDelay = 40;
-        document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
-    </script><?
+        <script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
+        <script type="text/javascript">
+            //var animate = !(checkCookie("animateCookie"));
+            //setCookie("animateCookie");
+            animate = true;
+            tickerDelay = 40;
+            document.onload = initMessage("ticker-source","ticker-display",animate,tickerDelay);
+        </script><?
     }
     ?>
     </div>
 </section>
-<script type="text/javascript" src="<? echo $host; ?>static/js/animate-message.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/screenfull.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/gallery.js"></script>
 <script>
