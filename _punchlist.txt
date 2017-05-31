@@ -39,16 +39,12 @@ ignore this.
 + a-z link fix on second-level pages
 + meanwhile ... * fix *
 + sign pictures (PDF covers)
-- css 4 column float? 
+x css 4 column float
 - mobile css
 
 --
 
-- Numbered lists like 20 Questions (2014) and Cyprus Cinemas (2015) are
-automatically indenting. I didn’t want to screw with the markdown/html.
-Maybe there’s an easy way to do this you know about.
-
-- On tablets, the annual report index nav is getting cut off on the right
+- on tablets, the annual report index nav is getting cut off on the right
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
