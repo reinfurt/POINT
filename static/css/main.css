@@ -418,6 +418,9 @@ figure {
     transform: translate(-50%,-50%);
 }
 
+#meanwhile {
+}
+
 .top {
     position: absolute;
     top: 0px;
@@ -476,17 +479,16 @@ figure {
 	font-family: futura-book;
 }
 
-.now {
+.helvetica {
 	font-family: Helvetica, Arial, sans-serif;
-	z-index: 100;
 }
 
-.now a:link,
-.now a:visited {
+.helvetica a:link,
+.helvetica a:visited {
 	color: #f30;
 }
 
-p.now {
+p.helvetica {
 	padding-left: 20px;
 }
 
@@ -612,18 +614,18 @@ p.now {
     /* these are for the meanwhile ... menu and done sloppy */
     /* should be an id for that menu */
     /* and change that for mobile */
+
     .top {
         position: relative;
         top: 0px;
     }
 
-    .right {
-        
+    .right {        
         position: relative;
         left: 0px;
     }
 
-    .now {
+    #meanhile {
         visibility: hidden;
     }
     /* end */

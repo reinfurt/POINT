@@ -60,7 +60,7 @@ $media_dims = array();
         for($i = 0; $i < count($b_arr); $i++)
             echo $b_arr[$i] . "<br />";
             $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
-            ?><div class="now">
+            ?><div class="helvetica">
                 <a href="<? echo $report_url; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
             </div>
         </div>
@@ -69,12 +69,12 @@ $media_dims = array();
     }
     else
     {
-    ?><div class="now column top right">
+    ?><div id="meanwhile" class="helvetica column top right">
         <p>Meanwhile, here is what’s happening now:</p>
         <div id="ticker-wrapper">
             <div id="ticker-display"></div>
             <div id="ticker-source" class="hidden"><?                   
-            foreach($now_children as $c)
+            foreach($meanwhile_children as $c)
             {
                 echo process_md($c['name1']." / ".$c['deck']." / ".$c['body']);
             }

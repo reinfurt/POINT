@@ -25,7 +25,7 @@ $name = strip_tags($item["name1"]);
 $title = $item["name1"] ? $item["name1"] : "Point";
 if ($title == "Point") $is_home = true;
 
-$now_children = $oo->children(1);
+$meanwhile_children = $oo->children(1);
 
 $is_report = false;
 if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
@@ -79,7 +79,7 @@ $js_back = "javascript:history.back();";
     require_once("year-menu.php");
 
         if ($is_event != "true" && $is_report == false) { 
-		?><header class="now column">
+		?><header class="column helvetica">
 			<div>
 				<a href="<? echo $host; ?>">This website</a> is a filing 
 				cabinet for the ANNUAL REPORTS of POINT Centre for 
@@ -98,7 +98,7 @@ $js_back = "javascript:history.back();";
 
 		if ($view != "a-z") {
 
-		?><div class="now">
+		?><div class="helvetica">
 		    <div id="a-z-select"><a href='/point/a-z'>A–Z</a></div>
 		</div><?
 	

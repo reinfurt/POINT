@@ -25,10 +25,10 @@ function sort_sans_articles($a, $b)
     return strnatcasecmp(handleArticles($a),handleArticles($b));
 }
 
-?><!-- <div class="now">
+?><!-- <div class="helvetica">
     <div id="a-z-select">A–Z</div>
 </div> -->
-<div id="a-z" class="now"><?
+<div id="a-z" class="helvetica"><?
     $report_ids = array(3, 4, 5, 6);
     // make (wires.fromid = 3 OR wires.fromid = 4 . . . )
     $rsql = "(wires.fromid = ".$report_ids[0];
