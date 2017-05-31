@@ -585,9 +585,14 @@ p.helvetica {
 		padding-top:0px;
 	}
 	
+    #meanwhile {
+        visibility: hidden;
+    }
+
 	#event-display {
 		width: 100%;
 	}
+
 	#ticker-display {
 	}
 
@@ -597,6 +602,10 @@ p.helvetica {
 		right: 0px;
 	}
 	
+	#year-menu {
+        position: relative;
+	}
+
 	.column {
 		width: 100vw;
 		padding-bottom: 0px;
@@ -611,10 +620,6 @@ p.helvetica {
         position: relative;
     }
 
-    /* these are for the meanwhile ... menu and done sloppy */
-    /* should be an id for that menu */
-    /* and change that for mobile */
-
     .top {
         position: relative;
         top: 0px;
@@ -624,9 +629,4 @@ p.helvetica {
         position: relative;
         left: 0px;
     }
-
-    #meanhile {
-        visibility: hidden;
-    }
-    /* end */
 }

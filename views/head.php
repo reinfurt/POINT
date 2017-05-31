@@ -76,7 +76,6 @@ $js_back = "javascript:history.back();";
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body><?
-    require_once("year-menu.php");
 
         if ($is_event != "true" && $is_report == false) { 
 		?><header class="column helvetica">
@@ -93,8 +92,10 @@ $js_back = "javascript:history.back();";
 					</div><?
 				}
 			?></div><?
-	} ?>
+	    } ?>
 		</header><?
+
+        require_once("year-menu.php");
 
 		if ($view != "a-z") {
 
