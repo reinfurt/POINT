@@ -27,11 +27,11 @@ x hand blink
   turns out the real problem is in open-records-generator/models/model.php
   where the DESC flag is still wreaking havoc
 - update open-records-generator on local (git submodule etc)
-- dot only to blink on rollover
+- reduce all img sizes
+/ dot only to blink on rollover (expand width of dot div) or red?
 - css 4 column float
 - all links to open in new windows
   add a target to all a href elements? or all processed in markdown    
-- reduce all img sizes
 - meanwhile ... *fix*
 - sign pictures (PDF covers)
 - mobile css
