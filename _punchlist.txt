@@ -40,9 +40,7 @@ ignore this.
 + meanwhile ... * fix *
 + sign pictures (PDF covers)
 x css 4 column float
-- mobile css
-
---
+/ mobile css in process
 
 - on tablets, the annual report index nav is getting cut off on the right
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
