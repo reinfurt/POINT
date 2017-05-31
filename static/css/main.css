@@ -277,6 +277,7 @@ figure {
     position: absolute;
     top: 20px;
     left: 20px;
+    z-index: 1000;
 }
 
 #hand {
@@ -577,6 +578,7 @@ p.helvetica {
 
     /* total hack */
     #year-menu {
+        top: 20px; 
         left: 39%;
     }
 
