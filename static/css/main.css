@@ -61,25 +61,17 @@ figure {
 	color: #f30;
 	padding-top: 17px;
 	cursor: pointer;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-#years {
-	display: none;
+    -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
 }
 
 #year-menu {
     position: fixed;
-    display: block;
-    top: 0px;
-    width: 404px;
-    height: 128px;
-    padding: 30px;
+    top: 20px;
+    width: 100%;
+    height: 100px;
+    margin: auto;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    line-height: 1.2em;
-    white-space: nowrap;
-    z-index: +1;
+    -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
 }
 
 #year-menu:hover {
@@ -92,7 +84,7 @@ figure {
 	cursor: pointer;
 	left: 20px;
 	bottom: 20px;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
     z-index: 100;
 }
 
@@ -142,17 +134,6 @@ figure {
 }
 
 #ticker-display { 
-}
-
-#year {
-	/*display: none;*/
-	position: fixed;
-	top: 0px;
-    white-space: nowrap;
-	line-height: 1.2em;
-	padding: 30px;
-	font-family: futura-book;
-	z-index: +1;
 }
 
 #dot img {
@@ -370,36 +351,28 @@ figure {
 	visibility: hidden;
 }
 
-.h-centre {
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.year-container {
-    padding: 10px;
-    padding-bottom: 20px;
-    display: block;
+.year {
+    height: 100px;
     white-space: nowrap;
+    padding-bottom: 10px;    
+    text-align: center;
 }
 
-.year-container:hover {
-    opacity: 0.5;
-}
-
-.year-container:active {
-    opacity: 0.0;
-}
-
-.digit-container > img {
+.year > img {
+    display: inline-block;
     max-width: 100%;
     max-height: 100%;
-    width: initial;
+    width: auto;
+    height: 100%;
     padding-left: 30px;
 }
 
-.digit-container {
-    height: 80px;
-    display: inline-block;
+.year:hover {
+    opacity: 0.5;
+}
+
+.year:active {
+    opacity: 0.0;
 }
 
 .fullwindow {
@@ -555,31 +528,7 @@ p.helvetica {
 	header.column {
 		padding-bottom: 17px;
 	}
-	
-	#year {
-		text-align: center;
-	}
-	
-    /* to sort out 
-    #year-menu {
-        position: relative;
-        width: 300px;
-        height: auto;
-        padding: 30px;
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        line-height: 1.2em;
-        white-space: nowrap;
-        z-index: +1;
-    }
-    */
-
-    /* total hack */
-    #year-menu {
-        top: 20px; 
-        left: 39%;
-    }
-
+		
 	#main {
 		margin-top: 140px;
 		width: 80%;
@@ -606,10 +555,26 @@ p.helvetica {
 		bottom: 0px;
 		right: 0px;
 	}
-	
-	#year-menu {
+
+    #year-menu {
         position: relative;
-	}
+        height: 60px;
+    }	
+    
+    #dot img {
+        height: 7px;
+        width: 7px;
+	    margin-left: 20px;
+        display: inline-block;
+    }
+
+    .year {
+        height: 60px;
+    }
+
+    .year > img {
+        padding-left: 16px;
+    }
 
 	.column {
 		width: 100vw;
