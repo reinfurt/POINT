@@ -556,25 +556,26 @@ p.helvetica {
 		right: 0px;
 	}
 
-    #year-menu {
-        position: relative;
-        height: 60px;
-    }	
+    	#year-menu {
+        	position: relative;
+       		height: 90px;
+    	}	
     
-    #dot img {
-        height: 7px;
-        width: 7px;
-	    margin-left: 20px;
-        display: inline-block;
-    }
+    	#dot img {
+        	height: 7px;
+	        width: 7px;
+		margin-left: 20px;
+	        display: inline-block;
+    	}
 
-    .year {
-        height: 60px;
-    }
+	.year {
+        	height: 90px;
+		padding-bottom: 20px;
+    	}
 
-    .year > img {
-        padding-left: 16px;
-    }
+	.year > img {
+        	padding-left: 16px;
+    	}
 
 	.column {
 		width: 100vw;
