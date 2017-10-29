@@ -46,5 +46,6 @@ x css 4 column float
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
-
-
+- a-z menu entry duplication fix, refine sql search
+- hide years on a-z page
+- a-z remove duplicates by setting active=0 in objects table

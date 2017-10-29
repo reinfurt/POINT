@@ -94,13 +94,12 @@ $js_back = "javascript:history.back();";
 	    } ?>
 		</header><?
 
-        require_once("year-menu.php");
-
 		if ($view != "a-z") {
+		        require_once("year-menu.php");
 
-		?><div class="helvetica">
-		    <div id="a-z-select"><a href='/point/a-z'>A–Z</a></div>
-		</div><?
-	
-		} ?>
+			?><div class="helvetica">
+		    		<div id="a-z-select"><a href='/point/a-z'>A–Z</a></div>
+			</div><?
+		}
+	?>
 
