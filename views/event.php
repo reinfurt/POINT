@@ -45,7 +45,7 @@ $media_dims = array();
 		<div class="img-container"><?
             if ($pdf) {
                 ?><a href="<? echo $url; ?>">
-                    <img src="/media/png/pdf.png">
+                    <img src="<? echo $host; ?>media/png/pdf.png">
                 </a><?
             } else {
                 ?><img src="<? echo $url; ?>"><?
