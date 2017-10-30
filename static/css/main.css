@@ -489,11 +489,11 @@ p.helvetica {
 	-webkit-animation: blink 1s steps(2, start) infinite;
 }
 
+
 .blink:active {
     opacity: 0.0;
 }
 
-/*
 @keyframes blink {
   to {
     visibility: hidden;
@@ -505,17 +505,21 @@ p.helvetica {
     visibility: hidden;
   }
 }
-*/
 
-@keyframes blink {
+.nudge-right {
+	animation: nudge-right 1s steps(2, start) infinite;
+	-webkit-animation: nudge-right 1s steps(2, start) infinite;
+}
+
+@keyframes nudge-right {
   to {
-    opacity: 0.1;
+    margin-left: 10px;  
   }
 }
 
-@-webkit-keyframes blink {
+@-webkit-keyframes nudge-right {
   to {
-    opacity: 0.1;
+    margin-left: 10px;  
   }
 }
 

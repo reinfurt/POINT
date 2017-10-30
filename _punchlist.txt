@@ -40,17 +40,15 @@ ignore this.
 + meanwhile ... * fix *
 + sign pictures (PDF covers)
 x css 4 column float
++ hide years on a-z page
++ generic pdf icon for display of pdfs 
+  for ex http://dev.o-r-g.com/point/annual-reports/2013/text-by-natalie-heller
+  and http://dev.o-r-g.com/point/annual-reports/2013/participants
++ hand on home page, animate pointing right
+/ a-z remove duplicates by setting active=0 in objects table
 / mobile css in process
   #year-menu, .year-container, .digit-container, .h-centre
 - on tablets, the annual report index nav is getting cut off on the right
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
-- a-z menu entry duplication fix, refine sql search
-- hide years on a-z page
-- a-z remove duplicates by setting active=0 in objects table
-- hand on home page, animate pointing right
-- generic pdf icon for display of pdfs 
-  for ex http://dev.o-r-g.com/point/annual-reports/2013/text-by-natalie-heller
-  and http://dev.o-r-g.com/point/annual-reports/2013/participants
-

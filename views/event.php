@@ -25,6 +25,8 @@ $media_dims = array();
 	$i = 0;
 	foreach($media as $m) {
 		$url = m_url($m);
+        if ($m['type'] == "pdf")
+            $pdf = true;
 		$caption = $m['caption'];
 		$media_urls[] = $url;
 		$media_captions[] = $caption;
@@ -40,9 +42,15 @@ $media_dims = array();
         $style = "width: 100%;";
 	?>
 	<div class="thumb" style="<? echo $style; ?>">
-		<div class="img-container">
-            <img src="<? echo $url; ?>">         
-        </div>
+		<div class="img-container"><?
+            if ($pdf) {
+                ?><a href="<? echo $url; ?>">
+                    <img src="/media/png/pdf.png">
+                </a><?
+            } else {
+                ?><img src="<? echo $url; ?>"><?
+            }
+        ?></div>
 		<div class="caption">
             <? echo $caption; ?>
         </div>
