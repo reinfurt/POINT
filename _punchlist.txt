@@ -46,5 +46,3 @@ x css 4 column float
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
-
-
