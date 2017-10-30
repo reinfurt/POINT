@@ -1,0 +1,56 @@
++ photo layout on secondary page (pinboard, all visible)
++ image gallery
+    + fix $wide_tall to use relative urls (see /modernart.local/views/artist.php)
+    + add square, centered and bg as per modernart
+    + cleanup fullscreen transition
+    + add $body
+    + fix .centered
+    - fix thumb click closure etc for img index #
++ replace X with a go back arrow or just remove X
+x mobile for image pinboard
+  full width and follow the text
+x if no photos, the white space is too prominent
++ when texts are quite long after click need to scroll for photos
+x dont know if it could work as a parallel column to the text.
++ click on date goes to that date
++ page loading time debug (break out A-Z db call)
++ open records generator delete entries
++ add dates on home
+x adjust image gallery
++ add hands to image carousel left and right
++ add css cursor change to images
+x hand blink    
++ years aligmment, index.php / event.php
++ rewrite year-menu.php and year.php to be one, simpler etc
++ error 500 internal server configuration problem with loading year-menu.php on server in head.php
+  in views/year-menu.php at $oo->get_all
+  turns out the real problem is in open-records-generator/models/model.php
+  where the DESC flag is still wreaking havoc
++ update open-records-generator on local (git submodule etc)
++ reduce all img sizes
+x dot only to blink on rollover (expand width of dot div) or red
++ hover / active states css
+x add target to all a href elements? processed in markdown?
+x doesn’t look like Optima has Greek (or Polish) character support. The Greek 
+characters are rendering in a different sans serif font.
++ link active color is the same color as the background color (white) so the 
+text disappears when the linked text is clicked. If that was intentional, 
+ignore this.
++ a-z link fix on second-level pages
++ meanwhile ... * fix *
++ sign pictures (PDF covers)
+x css 4 column float
+/ mobile css in process
+  #year-menu, .year-container, .digit-container, .h-centre
+- on tablets, the annual report index nav is getting cut off on the right
+(the margins or padding seem to be too tight). Haven’t checked on mobiles.
+It’s also overlapping with the text on top. And the two text columns aren’t
+stacking. Don’t know if this is the look you were after.
+- a-z menu entry duplication fix, refine sql search
+- hide years on a-z page
+- a-z remove duplicates by setting active=0 in objects table
+- hand on home page, animate pointing right
+- generic pdf icon for display of pdfs 
+  for ex http://dev.o-r-g.com/point/annual-reports/2013/text-by-natalie-heller
+  and http://dev.o-r-g.com/point/annual-reports/2013/participants
+
