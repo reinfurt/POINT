@@ -84,7 +84,7 @@ $media_dims = array();
             <div id="ticker-source" class="hidden"><?                   
             foreach($meanwhile_children as $c)
             {
-                echo process_md($c['name1']." / ".$c['deck']." / ".$c['body']);
+                echo process_md($c['name1']." | ".$c['deck']." | ".$c['body']);
             }
             ?></div>
         </div>
