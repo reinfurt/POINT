@@ -3,8 +3,7 @@
 // via
 // http://stackoverflow.com/questions/20744995/how-to-sort-an-array-with-php-ignoring-the-articles-a-an-the-in-the-beginni
 
-function handleArticles($str)
-{
+function handleArticles($str) {
     // ignore non-alphanumerics
     $str = preg_replace("/[^A-Za-z0-9 ]/", '', $str);
     
@@ -20,8 +19,7 @@ function handleArticles($str)
     return $str;
 }
 
-function sort_sans_articles($a, $b)
-{
+function sort_sans_articles($a, $b) {
     return strnatcasecmp(handleArticles($a),handleArticles($b));
 }
 

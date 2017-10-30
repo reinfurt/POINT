@@ -1,5 +1,6 @@
-Options +FollowSymLinks -Indexes
-IndexIgnore */*
+# Options +FollowSymLinks -Indexes
+Options +FollowSymLinks +Indexes
+# IndexIgnore */*
 
 # Turn on the RewriteEngine
 RewriteEngine On
