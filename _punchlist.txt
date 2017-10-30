@@ -49,3 +49,8 @@ stacking. Don’t know if this is the look you were after.
 - a-z menu entry duplication fix, refine sql search
 - hide years on a-z page
 - a-z remove duplicates by setting active=0 in objects table
+- hand on home page, animate pointing right
+- generic pdf icon for display of pdfs 
+  for ex http://dev.o-r-g.com/point/annual-reports/2013/text-by-natalie-heller
+  and http://dev.o-r-g.com/point/annual-reports/2013/participants
+

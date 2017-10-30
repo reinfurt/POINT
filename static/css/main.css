@@ -75,7 +75,7 @@ figure {
 }
 
 #year-menu:hover {
-    overflow: visible;
+    /* overflow: visible; */
 }
 
 #a-z-select {
@@ -307,8 +307,10 @@ figure {
 .report-img {
 	width: 200px;
 	vertical-align: top;
+	/*
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
+	*/
 }
 
 .hund {
@@ -327,7 +329,7 @@ figure {
 	/* width: 25vw; */
 	width: 25%;
 	padding: 20px;
-	padding-bottom: 68px;	
+	padding-bottom: 0px;	
 	z-index: 5;
 }
 
@@ -482,7 +484,7 @@ p.helvetica {
   animations
 -----------------------------------------------*/
 
-.blink:hover {
+.blink {
 	animation: blink 1s steps(2, start) infinite;
 	-webkit-animation: blink 1s steps(2, start) infinite;
 }
@@ -491,6 +493,7 @@ p.helvetica {
     opacity: 0.0;
 }
 
+/*
 @keyframes blink {
   to {
     visibility: hidden;
@@ -500,6 +503,19 @@ p.helvetica {
 @-webkit-keyframes blink {
   to {
     visibility: hidden;
+  }
+}
+*/
+
+@keyframes blink {
+  to {
+    opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes blink {
+  to {
+    opacity: 0.1;
   }
 }
 

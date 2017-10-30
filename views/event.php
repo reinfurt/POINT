@@ -69,7 +69,7 @@ $media_dims = array();
     }
     else
     {
-    ?><div id="meanwhile" class="helvetica column top right">
+    ?><div id="meanwhile" class="helvetica column">
         <p>Meanwhile, here is what’s happening now:</p>
         <div id="ticker-wrapper">
             <div id="ticker-display"></div>
