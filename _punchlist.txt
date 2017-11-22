@@ -52,4 +52,16 @@ x css 4 column float
 (the margins or padding seem to be too tight). Haven’t checked on mobiles.
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
-- meanwhile menu, try | in place of / or .
++ meanwhile menu, try | in place of / or .
+
+* skype 11/22/2017
+
+- 11/22 andre to try and make an "index" which will appear as a second 
+page after the annual report scrawl page. then, visualize this
+
+- options are to 
+
+1. annual reports with index
+2. annualreports.pointcentre.org  and www.pointcentre.org
+3. delete annualreports, make only www.pointcentre.org
+ 
