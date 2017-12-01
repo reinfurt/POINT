@@ -94,12 +94,12 @@ li {
 	left: 20px;
 	bottom: 20px;
     -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
+    background-color:#FFF;
     z-index: 100;
 }
 
 #a-z-select:hover {
     opacity: 0.5;
-    background-color:#FFF;
 }
 
 #a-z-select:active {
