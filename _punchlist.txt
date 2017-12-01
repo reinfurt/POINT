@@ -53,6 +53,8 @@ x css 4 column float
 It’s also overlapping with the text on top. And the two text columns aren’t
 stacking. Don’t know if this is the look you were after.
 + meanwhile menu, try | in place of / or .
+- mobile css cleanup
+- database cleanup
 
 * skype 11/22/2017
 
@@ -65,3 +67,6 @@ page after the annual report scrawl page. then, visualize this
 2. annualreports.pointcentre.org  and www.pointcentre.org
 3. delete annualreports, make only www.pointcentre.org
  
+- change a-z to index
+  views/index which indexes events by category, by year
+- search
