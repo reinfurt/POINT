@@ -7,6 +7,8 @@ if (preg_match($pattern, $u))
 	$view = "report";
 else if (preg_match('/a-z/',$u))
 	$view = "a-z";
+else if (preg_match('/index/',$u))
+	$view = "year-index";
 else
 	$view = "event";
 

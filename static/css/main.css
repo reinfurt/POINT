@@ -53,6 +53,15 @@ a:hover > .report-img {
 figure {
 }
 
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
 /*-----------------------------------------------
   ids
 -----------------------------------------------*/
@@ -274,6 +283,10 @@ figure {
 /*-----------------------------------------------
   classes
 -----------------------------------------------*/
+
+.nav-level {
+    -webkit-margin-after: 1em;
+}
 
 .thumb {
     vertical-align: top;
