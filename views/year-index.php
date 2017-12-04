@@ -14,8 +14,8 @@ $rootid = "497";
 $tree = $oo->traverse($rootid);
 $nav = $oo->nav_full($tree);
 
-?><div id="a-z" class="helvetica">
-Index of Activities<?
+?><div id="year-index" class="helvetica">
+Index<?
 foreach($nav as $n) {
     $d = $n['depth'];
     if($d > $prevd) {

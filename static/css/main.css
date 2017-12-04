@@ -113,6 +113,32 @@ li {
 	padding-bottom: 50px;
 }
 
+#year-index {
+	display: block;
+	padding-left: 20px;
+	padding-bottom: 50px;
+}
+
+#year-index-select {
+	position: fixed;
+	padding-top: 17px;
+	cursor: pointer;
+	left: 20px;
+	bottom: 20px;
+    -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
+    background-color:#FFF;
+    z-index: 100;
+}
+
+#year-index-select:hover {
+    opacity: 0.5;
+}
+
+#year-index-select:active {
+    opacity: 0.0;
+    background-color:#FFF;
+}
+
 #report {
 	/*position: fixed;*/
     bottom: 0px;

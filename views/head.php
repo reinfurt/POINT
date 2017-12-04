@@ -82,7 +82,7 @@ $js_back = "javascript:history.back();";
 				<a href="<? echo $host; ?>">This website</a> is a filing 
 				cabinet for the ANNUAL REPORTS of POINT Centre for 
 				Contemporary Art, Nicosia, Cyprus since the end of 2012.<?
-				if ($view == "a-z") {
+				if ($view == "a-z" || $view == "year-index") {
 					?><div id="year-select">
 					</div><?
 				} else {
@@ -95,10 +95,9 @@ $js_back = "javascript:history.back();";
 		</header><?    
 		if ($view != "a-z" && $view != "year-index") {
 		        require_once("year-menu.php");
-
 			?><div class="helvetica">
 		    		<!-- <div id="a-z-select"><a href='/point/a-z'>A–Z</a></div> -->
-		    		<div id="a-z-select"><a href='/point/year-index'>Index</a></div>
+		    		<div id="year-index-select"><a href='/point/year-index'>Index</a></div>
 			</div><?
 		}
 	?>
