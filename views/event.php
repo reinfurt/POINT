@@ -55,7 +55,7 @@ $media_dims = array();
             <? echo $caption; ?>
         </div>
 	</div><?
-	}
+	}   
 	?></figure><?
     if($uu->id)
     {
@@ -100,7 +100,7 @@ $media_dims = array();
     ?>
     </div>
 </section>
-<script type="text/javascript" src="<? echo $host; ?>static/js/screenfull.js"></script>
+<!-- <script type="text/javascript" src="<? echo $host; ?>static/js/screenfull.js"></script> -->
 <script type="text/javascript" src="<? echo $host; ?>static/js/gallery.js"></script>
 <script>
     var imgs = <? echo json_encode($media_urls); ?>;

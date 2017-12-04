@@ -31,22 +31,23 @@ if ($thisyear)
 foreach($years as $year)
     if ($year['o']['name1'] != $thisyear)
         array_push($yearsinorder, $year);
-
-// output html
-?><div id="year-menu" class="<? echo ($thisyear) ? 'hide-overflow' : 'show-overflow'; ?>"><?
-foreach($yearsinorder as $year) {
-	$year_digits = str_split($year['o']['name1']);
-    $urls = array();
-	foreach($year_digits as $d)
-		$urls[] = $media_path."png/$d.png";
-    $urlpoint = $media_path."png/point.png";
-    ?><a href="<? echo $host . "annual-reports/" . $year['o']['name1']; ?>"><?
-        ?><div class="year"><?
-        foreach($urls as $u) {
-            ?><img src="<? echo $u; ?>"><?
+    if ($thisyear && $view == "report") {
+        // output html
+        ?><div id="year-menu" class="<? echo ($thisyear) ? 'hide-overflow' : 'show-overflow'; ?>"><?
+        foreach($yearsinorder as $year) {
+	        $year_digits = str_split($year['o']['name1']);
+            $urls = array();
+	        foreach($year_digits as $d)
+		        $urls[] = $media_path."png/$d.png";
+            $urlpoint = $media_path."png/point.png";
+            ?><a href="<? echo $host . "annual-reports/" . $year['o']['name1']; ?>"><?
+                ?><div class="year"><?
+                foreach($urls as $u) {
+                    ?><img src="<? echo $u; ?>"><?
+                }
+                ?><span id="dot"><img src="<? echo $urlpoint; ?>"></span><?
+                ?></div><?
+            ?></a><?
         }
-        ?><span id="dot"><img src="<? echo $urlpoint; ?>"></span><?
-        ?></div><?
-    ?></a><?
-}
+    } 
 ?></div>
