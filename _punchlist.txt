@@ -79,3 +79,11 @@ page after the annual report scrawl page. then, visualize this
    which is literally what url is requested and there may be a better way
   also need to resolve whether this is an update to o-r-g which it should be
 
+- /open-records-generator/config/url.php --> urls built in views/head.php 
+  and then new URL object is passed a $urls array
+
+- /config/url.php --> urls are only built from $_SERVER['REQUEST_URI']
+
+** goal is to reconcile these two into one if possible **
+
+
