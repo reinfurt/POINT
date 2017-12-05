@@ -70,3 +70,11 @@ page after the annual report scrawl page. then, visualize this
 + change a-z to index
   views/index which indexes events by category, by year
 - search
+
+- still problems with url.php
+  works on localhost, does not work online
+  on localhost, url.php is in open-rec-gen/config
+  same on remote but doesnt work
+  expect it is to do with the $_SERVER_REQUEST_URI 
+   which is literally what url is requested and there may be a better way
+  also need to resolve whether this is an update to o-r-g which it should be
