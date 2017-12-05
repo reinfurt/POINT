@@ -67,6 +67,6 @@ page after the annual report scrawl page. then, visualize this
 2. annualreports.pointcentre.org  and www.pointcentre.org
 3. delete annualreports, make only www.pointcentre.org
  
-- change a-z to index
++ change a-z to index
   views/index which indexes events by category, by year
 - search

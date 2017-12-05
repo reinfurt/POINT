@@ -27,7 +27,7 @@ foreach($nav as $n) {
     }
     ?><li><?
     if($n['o']['id'] != $uu->id) {
-        ?><a href="<? echo $host."point/index/".$n['url']; ?>"><?
+        ?><a href="<? echo $host."index/".$n['url']; ?>"><?
             echo htmlentities($n['o']['name1']);
         ?></a><?
     } else {

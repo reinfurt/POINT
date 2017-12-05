@@ -4,9 +4,9 @@ $config = "open-records-generator/config/config.php";
 require_once($config);
 
 // specific to this 'app'
-$config_dir = $root."/config/";
+// $config_dir = $root."/config/";
+$config_dir = $root."/open-records-generator/config/";
 require_once($config_dir."url.php");
-
 $db = db_connect("guest");
 
 $oo = new Objects();
