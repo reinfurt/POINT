@@ -87,3 +87,30 @@ page after the annual report scrawl page. then, visualize this
 ** goal is to reconcile these two into one if possible **
 
 
+open-records-generator/config/url.php needs $url passed to it
+config/url.php does not
+maybe trick is if no $urls array, then build one 
+plus a diff in the parents function
+
+to do with the rtrim 
+
+function url_array()
+{
+    global $view;
+    $s = explode('/', rtrim($_SERVER['SCRIPT_NAME'], '/'));
+    $u = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
+
+    while($s[0] == $u[0])
+    {
+        array_shift($s);
+        array_shift($u);
+    }
+
+    $view = array_shift($u);
+    // if no view is selected, show the cover page
+    $view = $view ? $view : "cover";
+
+    return $u;
+}
+
+$urls = url_array();

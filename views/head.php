@@ -1,12 +1,6 @@
 <?
-// path to config file
-$config = "open-records-generator/config/config.php";
-require_once($config);
-
-// specific to this 'app'
-// $config_dir = $root."/config/";
-$config_dir = $root."/config/";
-require_once($config_dir."url.php");
+require_once("open-records-generator/config/config.php");
+require_once("open-records-generator/config/url.php");
 $db = db_connect("guest");
 
 $oo = new Objects();
