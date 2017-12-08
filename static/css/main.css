@@ -113,13 +113,13 @@ li {
 	padding-bottom: 50px;
 }
 
-#year-index {
+#annual-index {
 	display: block;
 	padding-left: 20px;
 	padding-bottom: 50px;
 }
 
-#year-index-select {
+#annual-index-select {
 	position: fixed;
 	padding-top: 17px;
 	cursor: pointer;
@@ -130,11 +130,11 @@ li {
     z-index: 100;
 }
 
-#year-index-select:hover {
+#annual-index-select:hover {
     opacity: 0.5;
 }
 
-#year-index-select:active {
+#annual-index-select:active {
     opacity: 0.0;
     background-color:#FFF;
 }

@@ -14,7 +14,7 @@ $rootid = "497";
 $tree = $oo->traverse($rootid);
 $nav = $oo->nav_full($tree);
 
-?><div id="year-index" class="helvetica">
+?><div id="annual-index" class="helvetica">
 Index<?
 foreach($nav as $n) {
     $d = $n['depth'];
@@ -27,7 +27,7 @@ foreach($nav as $n) {
     }
     ?><li><?
     if($n['o']['id'] != $uu->id) {
-        ?><a href="<? echo $host."index/".$n['url']; ?>"><?
+        ?><a href="<? echo $host."annual-index/".$n['url']; ?>"><?
             echo htmlentities($n['o']['name1']);
         ?></a><?
     } else {

@@ -28,6 +28,8 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 $is_event = false;
 if($uu->urls[0] == "annual-reports" && count($uu->urls) == 3)
 	$is_event = true;
+if($uu->urls[0] == "annual-index" && count($uu->urls) == 3)
+	$is_event = true;
 	
 use \Michelf\Markdown;
 // $md = new Markdown;
@@ -76,7 +78,7 @@ $js_back = "javascript:history.back();";
 				<a href="<? echo $host; ?>">This website</a> is a filing 
 				cabinet for the ANNUAL REPORTS of POINT Centre for 
 				Contemporary Art, Nicosia, Cyprus since the end of 2012.<?
-				if ($view == "a-z" || $view == "year-index") {
+				if ($view == "a-z" || $view == "annual-index") {
 					?><div id="year-select">
 					</div><?
 				} else {
@@ -87,11 +89,12 @@ $js_back = "javascript:history.back();";
 			?></div><?
 	    } ?>
 		</header><?    
-		if ($view != "a-z" && $view != "year-index") {
+		if ($view != "a-z" && $view != "annual-index") {
 		        require_once("year-menu.php");
 			?><div class="helvetica">
 		    		<!-- <div id="a-z-select"><a href='/point/a-z'>A–Z</a></div> -->
-		    		<div id="year-index-select"><a href='/point/year-index'>Index</a></div>
+		    		<div id="annual-index-select"><a 
+href='/point/annual-index'>Index</a></div>
 			</div><?
 		}
 	?>

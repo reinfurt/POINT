@@ -11,12 +11,18 @@ else if (preg_match('/projects/',$u))
 	$view = "event";
 else if (preg_match('/talks/',$u))
 	$view = "event";
+else if (preg_match('/screenings/',$u))
+	$view = "event";
 else if (preg_match('/conferences/',$u))
+	$view = "event";
+else if (preg_match('/independent-events/',$u))
+	$view = "event";
+else if (preg_match('/residency/',$u))
 	$view = "event";
 else if (preg_match('/a-z/',$u))
 	$view = "a-z";
-else if (preg_match('/index/',$u))
-	$view = "year-index";
+else if (preg_match('/annual-index/',$u))
+	$view = "annual-index";
 else
 	$view = "event";
 
