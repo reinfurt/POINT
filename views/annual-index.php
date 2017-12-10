@@ -12,10 +12,24 @@
 
 $rootid = "497";
 $tree = $oo->traverse($rootid);
-$nav = $oo->nav_full($tree);
+$nav = $oo->nav_full($tree);           
+?>
 
-?><div id="annual-index" class="helvetica">
-Index<?
+<?
+// this should either show the button or show the list i think
+if ($url == "annual-index") {
+
+} else {
+
+}
+?>
+
+<div class="helvetica">
+    <div id="annual-index-select"><a href='/annual-index'>Index</a></div>            
+</div>
+
+<div id="annual-index" class="helvetica">
+Annual Index<?
 foreach($nav as $n) {
     $d = $n['depth'];
     if($d > $prevd) {

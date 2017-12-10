@@ -26,9 +26,9 @@ if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
 	$is_report = true;
 
 $is_event = false;
-if($uu->urls[0] == "annual-reports" && count($uu->urls) == 3)
+if($uu->urls[0] == "annual-reports" && count($uu->urls) > 2)
 	$is_event = true;
-if($uu->urls[0] == "annual-index" && count($uu->urls) == 3)
+if($uu->urls[0] == "annual-index")
 	$is_event = true;
 	
 use \Michelf\Markdown;
@@ -72,7 +72,7 @@ $js_back = "javascript:history.back();";
 	</head>
 	<body><?
 
-        if ($is_event != "true" && $is_report == false) { 
+        if ($is_event != "true" && $is_report == false && $view != "annual-index") { 
 		?><header class="column helvetica">
 			<div>
 				<a href="<? echo $host; ?>">This website</a> is a filing 
@@ -88,14 +88,6 @@ $js_back = "javascript:history.back();";
 				}
 			?></div><?
 	    } ?>
-		</header><?    
-		if ($view != "a-z" && $view != "annual-index") {
-		        require_once("year-menu.php");
-			?><div class="helvetica">
-		    		<!-- <div id="a-z-select"><a href='/point/a-z'>A–Z</a></div> -->
-		    		<div id="annual-index-select"><a 
-href='/point/annual-index'>Index</a></div>
-			</div><?
-		}
+		</header><?
 	?>
 

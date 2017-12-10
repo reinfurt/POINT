@@ -121,22 +121,27 @@ li {
 
 #annual-index-select {
 	position: fixed;
-	padding-top: 17px;
-	cursor: pointer;
-	left: 20px;
-	bottom: 20px;
+	left: 15px;
+	bottom: 15px;
+    padding: 5px;
+    border: 2px solid red;
+    border-radius: 20px;
     -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
     background-color:#FFF;
+	cursor: pointer;
     z-index: 100;
 }
 
 #annual-index-select:hover {
-    opacity: 0.5;
+    background-color:#F00;
 }
 
 #annual-index-select:active {
-    opacity: 0.0;
     background-color:#FFF;
+}
+
+#annual-index-select a:hover {
+    opacity: 1.0;
 }
 
 #report {
@@ -295,6 +300,9 @@ li {
 }
 
 #hand {
+    position: fixed;
+    top: 20px; 
+    left: 20px; 
     width: 26px;
 }
 
@@ -304,6 +312,12 @@ li {
 
 #hand:active {
     opacity: 0.0;
+}
+
+#hand.nudge-right {
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
 
 /*-----------------------------------------------

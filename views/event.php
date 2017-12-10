@@ -6,6 +6,11 @@ $media_captions = array();
 $media_dims = array();
 ?>
 
+<div id="back">
+HELLO!
+    <a href="<? echo $host; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+</div>
+
 <section>
 	<div id="gallery">
         &nbsp;

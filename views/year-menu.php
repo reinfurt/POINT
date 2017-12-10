@@ -28,7 +28,7 @@ $years = $oo->nav(["$annualreportsid"], $annualreportsid);    // nav needs ids a
 $yearsinorder = array();    
 if ($thisyear) 
     $yearsinorder[0]['o'] = $thisyearobject;
-foreach($years as $year)
+foreach($years as $year) {
     if ($year['o']['name1'] != $thisyear)
         array_push($yearsinorder, $year);
     if ($thisyear && $view == "report") {
@@ -50,4 +50,5 @@ foreach($years as $year)
             ?></a><?
         }
     } 
+}
 ?></div>

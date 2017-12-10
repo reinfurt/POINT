@@ -1,33 +1,36 @@
-<?
-$u = rtrim($_SERVER['REQUEST_URI'], "/");
-
-// last four digits are numbers, ie page is an annual report
-$pattern = '(/\d{4}$)';
-if (preg_match($pattern, $u))
-	$view = "report";
-else if (preg_match('/exhibitions/',$u))
-	$view = "event";
-else if (preg_match('/projects/',$u))
-	$view = "event";
-else if (preg_match('/talks/',$u))
-	$view = "event";
-else if (preg_match('/screenings/',$u))
-	$view = "event";
-else if (preg_match('/conferences/',$u))
-	$view = "event";
-else if (preg_match('/independent-events/',$u))
-	$view = "event";
-else if (preg_match('/residency/',$u))
-	$view = "event";
-else if (preg_match('/a-z/',$u))
-	$view = "a-z";
-else if (preg_match('/annual-index/',$u))
-	$view = "annual-index";
-else
-	$view = "event";
-
+<?php
 require_once("views/head.php");
-require_once("views/".$view.".php");
+
+$urls = $uu->urls;
+$url = $uu->url;
+
+// basically, only choice is between views/report and views/event
+// then also whether to show year-menu or annual-index (menu) as well
+// what is views/menu.php?
+// need to get rid of $is_event messiness in views/head.php
+// and either include or not include that view here in /index
+
+// home
+if ($url == null)
+    require_once("views/report.php");
+
+// annual report
+if ((in_array("annual-reports", $urls) && count($urls) == 2))
+    require_once("views/report.php");
+
+// annual report event
+if ((in_array("annual-reports", $urls) && count($urls) > 2))
+    require_once("views/event.php");
+
+// annual index
+if ((in_array("annual-index", $urls) && count($urls) < 2))
+    require_once("views/annual-index.php");
+
+// annual index event
+if ((in_array("annual-index", $urls) && count($urls) > 2))
+    require_once("views/event.php");
+
 require_once("views/menu.php");
+require_once("views/year-menu.php");
 require_once("views/foot.php");
 ?>

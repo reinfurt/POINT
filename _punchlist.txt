@@ -80,3 +80,9 @@ page after the annual report scrawl page. then, visualize this
   maybe trick is if no $urls array, then build one 
   plus a diff in the parents function
 - search
+- index button interaction and css
+- restructure index.php
+  to look through url bit by bit to determine $view
+  base it on ica
+- views/year-menu.php debug
+- sort out $is_event & $is_report logic in views/head.php

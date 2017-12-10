@@ -22,7 +22,7 @@ for($i = 0; $i < count($body_arr); $i++)
 ?>
 
 <div id="back">
-    <a href="<? echo $host; ?>index.php"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+    <a href="<? echo $host; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
 </div>
 
 <div id="report"><?
