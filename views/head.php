@@ -19,18 +19,9 @@ $name = strip_tags($item["name1"]);
 $title = $item["name1"] ? $item["name1"] : "Point";
 if ($title == "Point") $is_home = true;
 
-$meanwhile_children = $oo->children(1);
+$meanwhile_root = 1;
+$meanwhile_children = $oo->children($meanwhile_root);
 
-$is_report = false;
-if($uu->urls[0] == "annual-reports" && count($uu->urls) == 2)
-	$is_report = true;
-
-$is_event = false;
-if($uu->urls[0] == "annual-reports" && count($uu->urls) > 2)
-	$is_event = true;
-if($uu->urls[0] == "annual-index")
-	$is_event = true;
-	
 use \Michelf\Markdown;
 // $md = new Markdown;
 
@@ -71,23 +62,21 @@ $js_back = "javascript:history.back();";
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
 	</head>
 	<body><?
-
-        if ($is_event != "true" && $is_report == false && $view != "annual-index") { 
-		?><header class="column helvetica">
-			<div>
-				<a href="<? echo $host; ?>">This website</a> is a filing 
-				cabinet for the ANNUAL REPORTS of POINT Centre for 
-				Contemporary Art, Nicosia, Cyprus since the end of 2012.<?
-				if ($view == "a-z" || $view == "annual-index") {
-					?><div id="year-select">
-					</div><?
-				} else {
-					?><div id="year-select">
-						Choose a year <img id="hand" class="nudge-right" src="media/png/hand-right.png">
-					</div><?
-				}
-			?></div><?
-	    } ?>
-		</header><?
-	?>
+        if ($uu->url == null) {
+    		?><header class="column helvetica">
+	    		<div>
+		    		<a href="<? echo $host; ?>">This website</a> is a filing 
+			    	cabinet for the ANNUAL REPORTS of POINT Centre for 
+				    Contemporary Art, Nicosia, Cyprus since the end of 2012.<?
+    				if ($view == "a-z" || $view == "annual-index") {
+	    				?><div id="year-select">
+		    			</div><?
+			    	} else {
+				    	?><div id="year-select">
+					    	Choose a year <img id="hand" class="nudge-right" src="media/png/hand-right.png">
+					    </div><?
+				    }
+			    ?></div>
+		    </header><?
+    	} ?>
 

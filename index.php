@@ -1,36 +1,26 @@
 <?php
 require_once("views/head.php");
 
-$urls = $uu->urls;
-$url = $uu->url;
+if (!$uu->ids) {
+    $view = "report";
+    require_once("views/meanwhile.php");
+}
 
-// basically, only choice is between views/report and views/event
-// then also whether to show year-menu or annual-index (menu) as well
-// what is views/menu.php?
-// need to get rid of $is_event messiness in views/head.php
-// and either include or not include that view here in /index
+if ((in_array("annual-reports", $uu->urls) && count($uu->urls) > 2) ||
+    (in_array("annual-index", $uu->urls)))
+    $view = "event";
 
-// home
-if ($url == null)
-    require_once("views/report.php");
+if ((in_array("annual-reports", $uu->urls) && count($uu->urls) <= 2))
+    $view = "report";
 
-// annual report
-if ((in_array("annual-reports", $urls) && count($urls) == 2))
-    require_once("views/report.php");
-
-// annual report event
-if ((in_array("annual-reports", $urls) && count($urls) > 2))
-    require_once("views/event.php");
-
-// annual index
-if ((in_array("annual-index", $urls) && count($urls) < 2))
+if (in_array("2015", $uu->urls))
     require_once("views/annual-index.php");
 
-// annual index event
-if ((in_array("annual-index", $urls) && count($urls) > 2))
-    require_once("views/event.php");
+if ((in_array("annual-index", $uu->urls) && count($uu->urls) < 2))
+    require_once("views/annual-index.php");
 
-require_once("views/menu.php");
+require_once("views/$view.php");
 require_once("views/year-menu.php");
+require_once("views/menu.php");
 require_once("views/foot.php");
 ?>

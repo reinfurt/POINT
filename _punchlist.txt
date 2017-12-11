@@ -79,10 +79,15 @@ page after the annual report scrawl page. then, visualize this
   config/url.php does not
   maybe trick is if no $urls array, then build one 
   plus a diff in the parents function
-- search
++ restructure index.php
++ views/year-menu.php debug
++ sort out $is_event & $is_report logic in views/head.php
++ move meanwhile menu inclusion to home only
+
+- year-menu funnyness on mobile and otherwise, repeats the years in layered divs
+
 - index button interaction and css
-- restructure index.php
-  to look through url bit by bit to determine $view
-  base it on ica
-- views/year-menu.php debug
-- sort out $is_event & $is_report logic in views/head.php
+
+- fix menu.php (doesnt show when it should)
+
+- search

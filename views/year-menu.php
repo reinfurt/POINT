@@ -28,10 +28,15 @@ $years = $oo->nav(["$annualreportsid"], $annualreportsid);    // nav needs ids a
 $yearsinorder = array();    
 if ($thisyear) 
     $yearsinorder[0]['o'] = $thisyearobject;
+
 foreach($years as $year) {
     if ($year['o']['name1'] != $thisyear)
         array_push($yearsinorder, $year);
-    if ($thisyear && $view == "report") {
+
+// problem is somewhere in here
+// if ($thisyear && $view == "report") {
+
+    if ($view == "report") {
         // output html
         ?><div id="year-menu" class="<? echo ($thisyear) ? 'hide-overflow' : 'show-overflow'; ?>"><?
         foreach($yearsinorder as $year) {

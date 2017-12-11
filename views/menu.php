@@ -11,8 +11,8 @@ $cover_urls = array();
 
 // get / output covers
 
-if($is_report)
-{
+if($view == "report") {
+
 	$cover_url = m_url($oo->media($uu->id)[0]);
 	?><div id="reports-alt" onmouseover="show_reports();" onmouseout="hide_reports();">
 		<div class="report-container select">
