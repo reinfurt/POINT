@@ -43,7 +43,7 @@ $nav = $oo->nav_full($tree);
     }
 ?></div>
         
-<script src="/static/js/annual-index.js"></script>
+<script src="<? echo $host; ?>/static/js/annual-index.js"></script>
 
 
 
