@@ -114,9 +114,10 @@ li {
 }
 
 #annual-index {
-	display: block;
+	display: none;
 	padding-left: 20px;
 	padding-bottom: 50px;
+    margin-top: 150px;
 }
 
 #annual-index-select {
@@ -128,12 +129,14 @@ li {
     border-radius: 20px;
     -webkit-tap-highlight-color: rgba(0.5,0.5,0.5,0.5);
     background-color:#FFF;
+    color: #F00;
 	cursor: pointer;
     z-index: 100;
 }
 
 #annual-index-select:hover {
     background-color:#F00;
+    color: #FFF;
 }
 
 #annual-index-select:active {
@@ -170,6 +173,7 @@ li {
 }
 
 #event-display {
+    margin-top: 2em;
 }
 
 #ticker-display { 
@@ -304,6 +308,7 @@ li {
     top: 20px; 
     left: 20px; 
     width: 26px;
+    cursor: pointer;
 }
 
 #hand:hover {
@@ -397,7 +402,6 @@ li {
 }
 
 .hidden {
-	visibility: hidden;
 	display: none;
 }
 
@@ -612,7 +616,8 @@ p.helvetica {
 	}
 	
     #meanwhile {
-        visibility: hidden;
+        /* visibility: hidden; */
+        display: none;
     }
 
 	#event-display {

@@ -11,7 +11,7 @@
 //  ...
 
 $thisyear = $uu->urls[1];
-if(intval($thisyear))
+if(intval($thisyear))     
     $thisyearobject["name1"] = $thisyear;
 else
     $thisyear = null;
@@ -29,12 +29,9 @@ $yearsinorder = array();
 if ($thisyear) 
     $yearsinorder[0]['o'] = $thisyearobject;
 
-foreach($years as $year) {
-    if ($year['o']['name1'] != $thisyear)
-        array_push($yearsinorder, $year);
-
-// problem is somewhere in here
-// if ($thisyear && $view == "report") {
+// display
+foreach($years as $year)
+    array_push($yearsinorder, $year);
 
     if ($view == "report") {
         // output html
@@ -55,5 +52,4 @@ foreach($years as $year) {
             ?></a><?
         }
     } 
-}
 ?></div>

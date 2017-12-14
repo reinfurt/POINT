@@ -7,7 +7,7 @@ $media_dims = array();
 ?>
 
 <div id="back">
-    <a href="<? echo $host; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+    <img id="hand" src="<? echo $host; ?>media/png/hand-left.png" onclick="window.history.back();">
 </div>
 
 <section>
@@ -72,7 +72,7 @@ $media_dims = array();
             echo $b_arr[$i] . "<br />";
             $report_url = $host.implode("/", array_slice($uu->urls, 0, count($uu->urls)-1));
             ?><div class="helvetica">
-                <a href="<? echo $report_url; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+                <img id="hand" src="<? echo $host; ?>media/png/hand-left.png" onclick="window.history.back();">
             </div>
         </div>
     </div>

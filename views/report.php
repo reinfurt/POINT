@@ -22,7 +22,7 @@ for($i = 0; $i < count($body_arr); $i++)
 ?>
 
 <div id="back">
-    <a href="<? echo $host; ?>"><img id="hand" src="<? echo $host; ?>media/png/hand-left.png"></a>
+    <img id="hand" src="<? echo $host; ?>media/png/hand-left.png" onclick="window.history.back();">
 </div>
 
 <div id="report"><?

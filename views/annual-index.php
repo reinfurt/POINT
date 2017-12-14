@@ -15,39 +15,35 @@ $tree = $oo->traverse($rootid);
 $nav = $oo->nav_full($tree);           
 ?>
 
-<?
-// this should either show the button or show the list i think
-if ($url == "annual-index") {
-
-} else {
-
-}
-?>
-
 <div class="helvetica">
-    <div id="annual-index-select"><a href='/annual-index'>Index</a></div>            
+    <div id="annual-index-select">Index</div>            
 </div>
 
-<div id="annual-index" class="helvetica">
-Annual Index<?
-foreach($nav as $n) {
-    $d = $n['depth'];
-    if($d > $prevd) {
-        ?><ul class="nav-level"><?                    
-   } else {
-        for($i = 0; $i < $prevd - $d; $i++) { 
-            ?></ul><? 
+<div id="annual-index" class="helvetica"><?
+
+    foreach($nav as $n) {
+        $d = $n['depth'];
+        if($d > $prevd) {
+            ?><ul class="nav-level"><?                   
+        } else {
+            for($i = 0; $i < $prevd - $d; $i++) { 
+                ?></ul><? 
+            }
         }
+        ?><li><?
+        if($n['o']['id'] != $uu->id) {
+            ?><a href="<? echo $host."annual-index/".$n['url']; ?>"><?
+                echo htmlentities($n['o']['name1']);
+            ?></a><?
+        } else {
+            ?><span><? echo htmlentities($n['o']['name1']); ?></span><?
+        }
+        ?></li><?
+        $prevd = $d;
     }
-    ?><li><?
-    if($n['o']['id'] != $uu->id) {
-        ?><a href="<? echo $host."annual-index/".$n['url']; ?>"><?
-            echo htmlentities($n['o']['name1']);
-        ?></a><?
-    } else {
-        ?><span><? echo htmlentities($n['o']['name1']); ?></span><?
-    }
-    ?></li><?
-    $prevd = $d;
-}
 ?></div>
+        
+<script src="/static/js/annual-index.js"></script>
+
+
+

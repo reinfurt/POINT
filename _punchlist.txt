@@ -83,11 +83,10 @@ page after the annual report scrawl page. then, visualize this
 + views/year-menu.php debug
 + sort out $is_event & $is_report logic in views/head.php
 + move meanwhile menu inclusion to home only
-
-- year-menu funnyness on mobile and otherwise, repeats the years in layered divs
-
-- index button interaction and css
-
-- fix menu.php (doesnt show when it should)
-
-- search
++ fix menu.php (doesnt show when it should)
+* search
++ debug year-menu which conflicts with annual-index
+  repeats the years in layered divs
++ hand does js go back always (global.js? or lib)
++ index button interaction
++ hide show annual index button instead of hrefx
